@@ -319,6 +319,65 @@
         radial-gradient(at 100% 100%, rgba(0, 102, 255, 0.10) 0px, transparent 50%),
         radial-gradient(at 0% 100%, rgba(51, 153, 255, 0.08) 0px, transparent 50%);
     }
+
+    /* CTA Animations */
+    @keyframes blob {
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      33% {
+        transform: translate(30px, -50px) scale(1.1);
+      }
+
+      66% {
+        transform: translate(-20px, 20px) scale(0.9);
+      }
+    }
+
+    @keyframes blob-slow {
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      33% {
+        transform: translate(-40px, 30px) scale(1.15);
+      }
+
+      66% {
+        transform: translate(25px, -40px) scale(0.85);
+      }
+    }
+
+    @keyframes gradient-shift {
+      0% {
+        background-position: 0% center;
+      }
+
+      50% {
+        background-position: 100% center;
+      }
+
+      100% {
+        background-position: 0% center;
+      }
+    }
+
+    .animate-blob {
+      animation: blob 8s ease-in-out infinite;
+    }
+
+    .animate-blob-slow {
+      animation: blob-slow 12s ease-in-out infinite;
+    }
+
+    .animate-gradient-shift {
+      animation: gradient-shift 4s ease infinite;
+    }
   </style>
   <link rel="stylesheet" href="/index.css">
 </head>

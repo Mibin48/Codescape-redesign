@@ -3,46 +3,50 @@ import React from 'react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="relative bg-gray-900 pt-24 pb-12 overflow-hidden" id="contact">
-      {/* Decorative Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full filter blur-3xl -translate-y-1/2"></div>
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full filter blur-3xl translate-y-1/2"></div>
+    <footer className="relative bg-gray-900 overflow-hidden">
+      {/* Top Gradient Line */}
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+      {/* Main Footer Content */}
+      <div className="relative pt-24 pb-16 px-8 sm:px-12 lg:px-20 xl:px-32">
+        {/* Decorative Background */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/8 rounded-full blur-[120px] -translate-y-1/2 pointer-events-none"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent-500/5 rounded-full blur-[100px] translate-y-1/2 pointer-events-none"></div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-20">
+
           {/* Brand Column */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-4">
             <div className="flex items-center gap-3 mb-8 group cursor-pointer">
               <img src="/no-bg-icon.png" alt="CODESCAPE Logo" className="w-14 h-14 object-contain group-hover:scale-110 transition-transform duration-300" />
               <span className="text-2xl font-bold text-white tracking-tight">
                 CODE<span className="gradient-text">SCAPE</span>
               </span>
             </div>
-            <p className="text-gray-400 text-base leading-relaxed mb-8 max-w-xs">
+            <p className="text-gray-400 text-base leading-relaxed mb-8 max-w-sm">
               Empowering businesses through innovative technology and creative design solutions. Where <span className="text-white font-medium">Creativity Meets Technology</span>.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-3">
               {[
-                { name: 'LinkedIn', icon: 'linkedin', color: 'hover:bg-[#0077b5]' },
-                { name: 'Twitter', icon: 'twitter', color: 'hover:bg-[#1da1f2]' },
-                { name: 'GitHub', icon: 'github', color: 'hover:bg-[#333]' },
-                { name: 'Instagram', icon: 'instagram', color: 'hover:bg-[#e1306c]' }
+                { name: 'LinkedIn', color: 'hover:bg-[#0077b5]' },
+                { name: 'Twitter', color: 'hover:bg-[#1da1f2]' },
+                { name: 'GitHub', color: 'hover:bg-[#333]' },
+                { name: 'Instagram', color: 'hover:bg-[#e1306c]' }
               ].map((social) => (
                 <a
                   key={social.name}
-                  className={`w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 border border-white/10 ${social.color}`}
+                  className={`w-11 h-11 rounded-xl bg-white/5 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 border border-white/10 hover:border-transparent hover:scale-110 ${social.color}`}
                   href="#"
+                  aria-label={social.name}
                 >
-                  <span className="sr-only">{social.name}</span>
-                  <span className="material-icons text-xl">share</span>
+                  <span className="material-icons text-lg">share</span>
                 </a>
               ))}
             </div>
           </div>
 
           {/* Services Column */}
-          <div>
+          <div className="lg:col-span-2">
             <h4 className="text-white font-bold mb-8 uppercase text-xs tracking-[0.2em]">Our Services</h4>
             <ul className="space-y-4">
               {['Web Development', 'Mobile Applications', 'Cloud Solutions', 'UI/UX Design', 'AI/ML Integration'].map(item => (
@@ -56,8 +60,8 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Company Column */}
-          <div>
+          {/* Quick Links Column */}
+          <div className="lg:col-span-2">
             <h4 className="text-white font-bold mb-8 uppercase text-xs tracking-[0.2em]">Quick Links</h4>
             <ul className="space-y-4">
               {['About Us', 'Latest Projects', 'Career Openings', 'Tech Blog', 'Privacy & Terms'].map(item => (
@@ -71,44 +75,68 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Contact Column */}
-          <div>
-            <h4 className="text-white font-bold mb-8 uppercase text-xs tracking-[0.2em]">Newsletter</h4>
-            <p className="text-gray-400 text-sm mb-6">Stay informed with our latest news and tech insights.</p>
-            <form className="relative group" onSubmit={(e) => e.preventDefault()}>
-              <input
-                className="w-full bg-white/5 border border-white/10 text-white text-sm rounded-xl focus:ring-primary focus:border-primary block p-4 pr-16 placeholder-gray-500 focus:outline-none focus:bg-white/10 transition-all"
-                placeholder="Your email address"
-                type="email"
-              />
-              <button
-                className="absolute right-2 top-2 bottom-2 bg-gradient-primary hover:shadow-glow text-white rounded-lg px-4 transition-all duration-300 transform active:scale-95"
-                type="submit"
-              >
-                <span className="material-icons">east</span>
-              </button>
-            </form>
+          {/* Contact & Newsletter Column */}
+          <div className="lg:col-span-4">
+            <h4 className="text-white font-bold mb-8 uppercase text-xs tracking-[0.2em]">Get In Touch</h4>
 
-            <div className="mt-8 space-y-4">
-              <div className="flex items-start gap-4 text-sm text-gray-400">
-                <span className="material-icons text-primary/60">location_on</span>
-                <span>Muvattupuzha, Kerala, <br />India - 686661</span>
+            {/* Contact Info */}
+            <div className="space-y-5 mb-10">
+              <div className="flex items-start gap-4">
+                <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0">
+                  <span className="material-icons text-primary text-lg">location_on</span>
+                </div>
+                <div>
+                  <p className="text-white text-sm font-semibold mb-0.5">Our Office</p>
+                  <p className="text-gray-400 text-sm">Muvattupuzha, Kerala, India - 686661</p>
+                </div>
               </div>
-              <div className="flex items-center gap-4 text-sm text-gray-400">
-                <span className="material-icons text-primary/60">email</span>
-                <a href="mailto:contact@thecodescape.in" className="hover:text-primary transition-colors">contact@thecodescape.in</a>
+              <div className="flex items-start gap-4">
+                <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0">
+                  <span className="material-icons text-primary text-lg">email</span>
+                </div>
+                <div>
+                  <p className="text-white text-sm font-semibold mb-0.5">Email Us</p>
+                  <a href="mailto:contact@thecodescape.in" className="text-gray-400 text-sm hover:text-primary transition-colors">contact@thecodescape.in</a>
+                </div>
               </div>
-              <div className="flex items-center gap-4 text-sm text-gray-400">
-                <span className="material-icons text-primary/60">call</span>
-                <a href="tel:+918921258262" className="hover:text-primary transition-colors">+91 8921258262</a>
+              <div className="flex items-start gap-4">
+                <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0">
+                  <span className="material-icons text-primary text-lg">call</span>
+                </div>
+                <div>
+                  <p className="text-white text-sm font-semibold mb-0.5">Call Us</p>
+                  <a href="tel:+918921258262" className="text-gray-400 text-2xl font-black hover:text-primary transition-colors tracking-tight">
+                    +91 892 125 8262
+                  </a>
+                </div>
               </div>
+            </div>
+
+            {/* Newsletter */}
+            <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/5">
+              <p className="text-white text-sm font-bold mb-3">Subscribe to our newsletter</p>
+              <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
+                <input
+                  className="flex-1 bg-white/5 border border-white/10 text-white text-sm rounded-xl focus:ring-primary focus:border-primary block p-3.5 placeholder-gray-500 focus:outline-none focus:bg-white/10 transition-all"
+                  placeholder="your@email.com"
+                  type="email"
+                />
+                <button
+                  className="bg-primary hover:bg-primary/80 text-white rounded-xl px-5 transition-all duration-300 transform active:scale-95 flex items-center justify-center"
+                  type="submit"
+                >
+                  <span className="material-icons text-lg">east</span>
+                </button>
+              </form>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
-          <div className="text-gray-500 text-xs">
+      {/* Full-Width Bottom Bar */}
+      <div className="w-full border-t border-white/5 bg-black/20">
+        <div className="px-8 sm:px-12 lg:px-20 xl:px-32 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="text-gray-500 text-xs text-center md:text-left">
             © {new Date().getFullYear()} <span className="text-gray-400 font-semibold tracking-wide">CODESCAPE</span>. All rights reserved.
             <span className="hidden md:inline mx-3 opacity-30">|</span>
             <br className="md:hidden" />
