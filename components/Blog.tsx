@@ -131,19 +131,22 @@ export const Blog: React.FC = () => {
                     {rest.map((post, i) => (
                         <div
                             key={post.id}
-                            className="group bg-white rounded-3xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-gray-100"
+                            className="group bg-white rounded-3xl overflow-hidden cursor-pointer shadow-sm hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-700 hover:-translate-y-3 border border-gray-100 relative"
                             data-aos="fade-up"
                             data-aos-delay={i * 150}
                         >
-                            <div className="flex flex-col sm:flex-row h-full">
+                            {/* Hover reveal glow */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+
+                            <div className="flex flex-col sm:flex-row h-full relative z-10">
                                 {/* Thumbnail */}
                                 <div className="sm:w-2/5 relative overflow-hidden">
                                     <img
                                         src={post.image}
                                         alt={post.title}
-                                        className="w-full h-48 sm:h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                        className="w-full h-48 sm:h-full object-cover transition-transform duration-1000 ease-[cubic-bezier(0.2,1,0.3,1)] group-hover:scale-110"
                                     />
-                                    <div className="absolute inset-0 bg-gray-900/10 group-hover:bg-gray-900/0 transition-colors duration-500"></div>
+                                    <div className="absolute inset-0 bg-gray-900/10 group-hover:bg-primary/10 transition-colors duration-700"></div>
                                 </div>
 
                                 {/* Content */}
@@ -154,23 +157,22 @@ export const Blog: React.FC = () => {
                                     <h3 className="text-xl font-black text-gray-900 leading-snug mb-3 group-hover:text-primary transition-colors duration-300">
                                         {post.title}
                                     </h3>
-                                    <p className="text-gray-500 text-sm leading-relaxed mb-5 line-clamp-2">
+                                    <p className="text-gray-500 text-sm leading-relaxed mb-5 line-clamp-2 group-hover:text-gray-700 transition-colors">
                                         {post.excerpt}
                                     </p>
 
-                                    <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
+                                    <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100 group-hover:border-primary/10 transition-colors">
                                         <div className="flex items-center gap-3">
-                                            <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
-                                                <span className="material-icons text-gray-500 text-xs">person</span>
+                                            <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+                                                <span className="material-icons text-gray-500 text-xs group-hover:text-primary transition-colors">person</span>
                                             </div>
                                             <div>
-                                                <p className="text-gray-900 font-bold text-xs">{post.author}</p>
+                                                <p className="text-gray-900 font-bold text-xs group-hover:text-primary transition-colors">{post.author}</p>
                                                 <p className="text-gray-400 text-[10px]">{post.role}</p>
                                             </div>
                                         </div>
-                                        <div className="flex items-center gap-1.5 text-gray-400 text-[10px] font-bold tracking-wider uppercase">
-                                            <span className="material-icons text-xs">schedule</span>
-                                            {post.readTime}
+                                        <div className="flex items-center gap-1.5 text-gray-400 group-hover:text-primary transition-colors">
+                                            <span className="material-icons text-lg group-hover:rotate-[-45deg] transition-transform duration-500">arrow_forward</span>
                                         </div>
                                     </div>
                                 </div>

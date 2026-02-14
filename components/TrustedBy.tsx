@@ -2,21 +2,17 @@
 import React from 'react';
 
 const logos = [
-  { name: 'ACME Corp', img: 'https://img.logoipsum.com/243.svg' },
-  { name: 'GlobalTech', img: 'https://img.logoipsum.com/244.svg' },
-  { name: 'Nebula', img: 'https://img.logoipsum.com/245.svg' },
-  { name: 'FoxRun', img: 'https://img.logoipsum.com/246.svg' },
-  { name: 'Circle.io', img: 'https://img.logoipsum.com/247.svg' },
-  { name: 'Trevva', img: 'https://img.logoipsum.com/248.svg' },
-  { name: 'Goldline', img: 'https://img.logoipsum.com/249.svg' },
-  { name: 'Aven', img: 'https://img.logoipsum.com/250.svg' },
-  { name: 'TechFlow', img: 'https://img.logoipsum.com/251.svg' },
-  { name: 'DataSync', img: 'https://img.logoipsum.com/252.svg' },
-  { name: 'CloudBurst', img: 'https://img.logoipsum.com/253.svg' },
-  { name: 'PixelPerfect', img: 'https://img.logoipsum.com/254.svg' },
-  { name: 'InnoVentures', img: 'https://img.logoipsum.com/255.svg' },
-  { name: 'NexGen Labs', img: 'https://img.logoipsum.com/256.svg' },
-  { name: 'Quantum', img: 'https://img.logoipsum.com/257.svg' },
+  { name: 'Google', img: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg' },
+  { name: 'Microsoft', img: 'https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg' },
+  { name: 'Amazon', img: 'https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg' },
+  { name: 'Meta', img: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg' },
+  { name: 'Netflix', img: 'https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg' },
+  { name: 'Spotify', img: 'https://upload.wikimedia.org/wikipedia/commons/2/26/Spotify_logo_with_text.svg' },
+  { name: 'Slack', img: 'https://cdn.worldvectorlogo.com/logos/slack-2.svg' },
+  { name: 'Airbnb', img: 'https://www.vectorlogo.zone/logos/airbnb/airbnb-ar21~bgwhite.svg' },
+  { name: 'Uber', img: 'https://upload.wikimedia.org/wikipedia/commons/5/58/Uber_logo_2018.svg' },
+  { name: 'Tesla', img: 'https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg' },
+  { name: 'Zoom', img: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg' },
 ];
 
 export const TrustedBy: React.FC = () => {

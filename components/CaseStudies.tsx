@@ -208,25 +208,7 @@ export const CaseStudies: React.FC = () => {
           </div>
         </div>
 
-        {/* ═══ PROJECT THUMBNAILS STRIP ═══ */}
-        <div className="mt-16 grid grid-cols-3 md:grid-cols-6 gap-3" data-aos="fade-up" data-aos-delay="100">
-          {[
-            'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=400&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=400&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=400&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=400&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=400&auto=format&fit=crop',
-          ].map((src, i) => (
-            <div key={i} className="relative rounded-2xl overflow-hidden aspect-square group cursor-pointer">
-              <img src={src} alt={`Project ${i + 1}`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors duration-300"></div>
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <span className="material-icons text-white text-2xl drop-shadow-lg">zoom_in</span>
-              </div>
-            </div>
-          ))}
-        </div>
+
       </div>
     </section>
   );

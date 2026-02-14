@@ -70,12 +70,12 @@ export const Expertise: React.FC = () => {
           {services.map((s, i) => (
             <div
               key={i}
-              className="group relative rounded-3xl bg-white border border-gray-200/80 hover:border-transparent overflow-hidden cursor-pointer transition-all duration-500 hover:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.12)]"
+              className="group relative rounded-3xl bg-white border border-gray-200/80 hover:border-transparent overflow-hidden cursor-pointer transition-all duration-700 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.15)] hover:-translate-y-2"
               data-aos="fade-up"
               data-aos-delay={i * 100}
             >
               {/* Hover Gradient Border Effect */}
-              <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${s.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+              <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${s.color} opacity-0 group-hover:opacity-100 transition-opacity duration-700`}></div>
               <div className="absolute inset-[1.5px] rounded-[22px] bg-white z-[1]"></div>
 
               <div className="relative z-[2]">
@@ -84,14 +84,14 @@ export const Expertise: React.FC = () => {
                   <img
                     src={s.image}
                     alt={s.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-110"
                   />
-                  <div className={`absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent`}></div>
-                  <div className={`absolute inset-0 bg-gradient-to-br ${s.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500 mix-blend-overlay`}></div>
+                  <div className={`absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-100 group-hover:opacity-60 transition-opacity duration-700`}></div>
+                  <div className={`absolute inset-0 bg-gradient-to-br ${s.color} opacity-0 group-hover:opacity-30 transition-opacity duration-700 mix-blend-overlay`}></div>
 
                   {/* Floating Project Count on Image */}
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-xl px-4 py-2 shadow-lg">
-                    <span className="text-2xl font-black text-gray-900 leading-none">{s.projects}+</span>
+                  <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md rounded-xl px-4 py-2 shadow-lg transform group-hover:-translate-x-2 transition-transform duration-500">
+                    <span className="text-2xl font-black text-gray-900 leading-none group-hover:text-primary transition-colors">{s.projects}+</span>
                     <p className="text-[9px] font-bold text-gray-400 uppercase tracking-wider">Projects</p>
                   </div>
                 </div>
@@ -100,33 +100,33 @@ export const Expertise: React.FC = () => {
                 <div className="p-10 lg:p-12 pt-6">
                   {/* Icon + Title */}
                   <div className="flex items-center gap-4 mb-4">
-                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${s.color} shadow-lg flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 flex-shrink-0`}>
-                      <span className="material-icons text-white text-xl">{s.icon}</span>
+                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${s.color} shadow-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-[15deg] transition-all duration-500 flex-shrink-0 group-hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.3)]`}>
+                      <span className="material-icons text-white text-2xl">{s.icon}</span>
                     </div>
-                    <h3 className="text-2xl lg:text-3xl font-black text-gray-900 group-hover:text-primary transition-colors duration-300 tracking-tight">
+                    <h3 className="text-2xl lg:text-3xl font-black text-gray-900 group-hover:text-primary transition-colors duration-300 tracking-tight group-hover:translate-x-2 transition-transform">
                       {s.title}
                     </h3>
                   </div>
 
                   {/* Description */}
-                  <p className="text-gray-500 text-base leading-relaxed mb-6">
+                  <p className="text-gray-500 text-base leading-relaxed mb-6 group-hover:text-gray-700 transition-colors">
                     {s.desc}
                   </p>
 
                   {/* Bottom: Tech Tags + Arrow */}
-                  <div className="flex items-center justify-between pt-6 border-t border-gray-100 group-hover:border-gray-200 transition-colors">
+                  <div className="flex items-center justify-between pt-6 border-t border-gray-100 group-hover:border-primary/10 transition-colors">
                     <div className="flex flex-wrap gap-2">
                       {s.tech.map((tech, idx) => (
                         <span
                           key={idx}
-                          className="text-xs px-3 py-1.5 bg-gray-50 border border-gray-100 rounded-full text-gray-500 font-semibold group-hover:border-primary/20 group-hover:text-primary group-hover:bg-primary/5 transition-all duration-300"
+                          className="text-xs px-3 py-1.5 bg-gray-50 border border-gray-100 rounded-full text-gray-500 font-semibold group-hover:border-primary/30 group-hover:text-primary group-hover:bg-white group-hover:shadow-sm transition-all duration-300"
                         >
                           {tech}
                         </span>
                       ))}
                     </div>
-                    <div className="w-10 h-10 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center group-hover:bg-primary group-hover:border-primary group-hover:shadow-button transition-all duration-300 flex-shrink-0 ml-4">
-                      <span className="material-icons text-gray-400 text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all duration-300">arrow_forward</span>
+                    <div className="w-12 h-12 rounded-xl bg-gray-900 border border-transparent flex items-center justify-center group-hover:bg-primary group-hover:scale-110 group-hover:shadow-xl transition-all duration-500 flex-shrink-0 ml-4 group/arrow">
+                      <span className="material-icons text-white text-xl group-hover:rotate-[-45deg] transition-all duration-500">arrow_forward</span>
                     </div>
                   </div>
                 </div>

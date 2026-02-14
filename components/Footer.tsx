@@ -142,19 +142,19 @@ export const Footer: React.FC = () => {
             </div>
 
             {/* Newsletter */}
-            <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/5">
-              <p className="text-white text-base font-bold mb-3">Subscribe to our newsletter</p>
+            <div className="p-8 rounded-3xl bg-white/[0.03] border border-white/5 hover:border-primary/20 hover:bg-white/[0.05] transition-all duration-500 group/news">
+              <p className="text-white text-base font-bold mb-4 group-hover/news:text-primary transition-colors">Subscribe to our newsletter</p>
               <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
                 <input
-                  className="flex-1 bg-white/5 border border-white/10 text-white text-base rounded-xl focus:ring-primary focus:border-primary block p-3.5 placeholder-gray-500 focus:outline-none focus:bg-white/10 transition-all"
+                  className="flex-1 bg-white/5 border border-white/10 text-white text-base rounded-2xl focus:ring-2 focus:ring-primary/20 focus:border-primary block p-4 placeholder-gray-500 focus:outline-none focus:bg-white/10 transition-all"
                   placeholder="your@email.com"
                   type="email"
                 />
                 <button
-                  className="bg-primary hover:bg-primary/80 text-white rounded-xl px-5 transition-all duration-300 transform active:scale-95 flex items-center justify-center"
+                  className="bg-primary hover:bg-primary/80 text-white rounded-2xl px-6 transition-all duration-300 transform active:scale-95 flex items-center justify-center group-hover/news:shadow-[0_10px_30px_-5px_rgba(59,130,246,0.3)]"
                   type="submit"
                 >
-                  <span className="material-icons text-lg">east</span>
+                  <span className="material-icons text-xl">east</span>
                 </button>
               </form>
             </div>
