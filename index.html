@@ -1,97 +1,325 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CODESCAPE | Where Creativity Meets Technology</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              "primary": "#2563EB",
-              "primary-dark": "#1D4ED8",
-              "background-light": "#FFFFFF",
-              "background-off": "#F8F9FA",
-              "surface-light": "#FFFFFF",
-              "text-main": "#1A1A1A",
-              "text-muted": "#52525B",
-              "border-light": "#E4E4E7"
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="CODESCAPE - Premium digital innovation agency delivering scalable web development, mobile apps, cloud solutions, and UI/UX design services.">
+  <meta property="og:title" content="CODESCAPE | Where Creativity Meets Technology">
+  <meta property="og:description"
+    content="Building reliable, scalable, and impactful digital solutions that transform businesses.">
+  <meta property="og:type" content="website">
+  <title>CODESCAPE | Where Creativity Meets Technology</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            // Primary Palette
+            "primary": {
+              600: "#0066FF",
+              500: "#0080FF",
+              400: "#3399FF",
+              300: "#66B3FF",
+              DEFAULT: "#0066FF"
             },
-            fontFamily: {
-              "display": ["Space Grotesk", "sans-serif"]
+            // Accent Colors
+            "accent": {
+              500: "#00D4FF",
+              400: "#33DDFF",
+              DEFAULT: "#00D4FF"
             },
-            borderRadius: {
-              "DEFAULT": "0.25rem",
-              "lg": "0.5rem",
-              "xl": "0.75rem",
-              "2xl": "1rem",
-              "full": "9999px"
+            // Neutral Palette
+            "gray": {
+              900: "#0F172A",
+              800: "#1E293B",
+              700: "#334155",
+              600: "#475569",
+              500: "#64748B",
+              400: "#94A3B8",
+              300: "#CBD5E1",
+              200: "#E2E8F0",
+              100: "#F1F5F9",
+              50: "#F8FAFC"
             },
-            animation: {
-              'blob': 'blob 10s infinite',
-              'scroll': 'scroll 40s linear infinite',
-              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+            // Semantic Colors
+            "success": "#10B981",
+            "warning": "#F59E0B",
+            "error": "#EF4444",
+            // Legacy support
+            "primary-dark": "#0052CC",
+            "background-light": "#FFFFFF",
+            "background-off": "#F8FAFC",
+            "surface-light": "#FFFFFF",
+            "text-main": "#0F172A",
+            "text-muted": "#64748B",
+            "border-light": "#E2E8F0"
+          },
+          fontFamily: {
+            "display": ["Inter", "system-ui", "sans-serif"],
+            "sans": ["Inter", "system-ui", "sans-serif"]
+          },
+          fontSize: {
+            'display-lg': ['72px', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '700' }],
+            'display-md': ['56px', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '700' }],
+            'display-sm': ['48px', { lineHeight: '1.2', letterSpacing: '-0.01em', fontWeight: '700' }],
+          },
+          backgroundImage: {
+            'gradient-primary': 'linear-gradient(135deg, #0066FF 0%, #00D4FF 100%)',
+            'gradient-hero': 'linear-gradient(180deg, #F8FAFC 0%, #EFF6FF 100%)',
+            'gradient-radial': 'radial-gradient(circle at center, var(--tw-gradient-stops))',
+            'mesh-gradient': 'radial-gradient(at 0% 0%, rgba(0, 102, 255, 0.15) 0px, transparent 50%), radial-gradient(at 100% 100%, rgba(0, 212, 255, 0.15) 0px, transparent 50%)',
+          },
+          boxShadow: {
+            'glow': '0 0 20px rgba(0, 102, 255, 0.3)',
+            'glow-lg': '0 0 40px rgba(0, 102, 255, 0.4)',
+            'card': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+            'card-hover': '0 20px 40px rgba(0, 0, 0, 0.1)',
+            'button': '0 8px 20px rgba(0, 102, 255, 0.25)',
+            'button-hover': '0 12px 28px rgba(0, 102, 255, 0.35)',
+          },
+          animation: {
+            'blob': 'blob 10s infinite ease-in-out',
+            'blob-slow': 'blob 15s infinite ease-in-out',
+            'scroll': 'scroll 40s linear infinite',
+            'scroll-slow': 'scroll 60s linear infinite',
+            'fade-in': 'fadeIn 0.6s ease-out forwards',
+            'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+            'fade-in-down': 'fadeInDown 0.8s ease-out forwards',
+            'scale-in': 'scaleIn 0.5s ease-out forwards',
+            'bounce-slow': 'bounce 3s infinite',
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'gradient-shift': 'gradientShift 8s ease infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'shimmer': 'shimmer 2s linear infinite',
+          },
+          keyframes: {
+            blob: {
+              '0%, 100%': { transform: 'translate(0px, 0px) scale(1)' },
+              '33%': { transform: 'translate(40px, -60px) scale(1.08)' },
+              '66%': { transform: 'translate(-30px, 30px) scale(0.92)' },
             },
-            keyframes: {
-              blob: {
-                '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                '33%': { transform: 'translate(30px, -50px) scale(1.05)' },
-                '66%': { transform: 'translate(-20px, 20px) scale(0.95)' },
-                '100%': { transform: 'translate(0px, 0px) scale(1)' },
-              },
-              scroll: {
-                '0%': { transform: 'translateX(0)' },
-                '100%': { transform: 'translateX(-100%)' },
-              },
-              fadeInUp: {
-                '0%': { opacity: '0', transform: 'translateY(20px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
-              }
+            scroll: {
+              '0%': { transform: 'translateX(0)' },
+              '100%': { transform: 'translateX(-50%)' },
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeInDown: {
+              '0%': { opacity: '0', transform: 'translateY(-30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            scaleIn: {
+              '0%': { opacity: '0', transform: 'scale(0.9)' },
+              '100%': { opacity: '1', transform: 'scale(1)' },
+            },
+            gradientShift: {
+              '0%, 100%': { backgroundPosition: '0% 50%' },
+              '50%': { backgroundPosition: '100% 50%' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+            shimmer: {
+              '0%': { transform: 'translateX(-100%)' },
+              '100%': { transform: 'translateX(100%)' },
             }
           },
+          letterSpacing: {
+            'tighter': '-0.02em',
+            'tight': '-0.01em',
+            'wide': '0.02em',
+            'wider': '0.05em',
+          }
         },
-      }
-    </script>
-    <style>
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #F8F9FA; }
-        ::-webkit-scrollbar-thumb { background: #D4D4D8; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #A1A1AA; }
-        
-        .bg-grid-minimal {
-            background-size: 60px 60px;
-            background-image: 
-                linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-        }
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-        .animation-delay-2000 { animation-delay: 2s; }
-    </style>
-<script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "react": "https://esm.sh/react@^19.2.4",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
+      },
+    }
+  </script>
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #F8FAFC;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #0066FF, #00D4FF);
+      border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, #0052CC, #00B8E6);
+    }
+
+    /* Grid Background Patterns */
+    .bg-grid-minimal {
+      background-size: 60px 60px;
+      background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+    }
+
+    .bg-grid-dots {
+      background-image: radial-gradient(circle, rgba(0, 102, 255, 0.08) 1px, transparent 1px);
+      background-size: 30px 30px;
+    }
+
+    /* Glassmorphism Effects */
+    .glass {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .glass-dark {
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Advanced Button Styles */
+    .btn-primary {
+      background: linear-gradient(135deg, #0066FF 0%, #00D4FF 100%);
+      box-shadow: 0 8px 20px rgba(0, 102, 255, 0.25);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(0, 102, 255, 0.35);
+    }
+
+    .btn-primary:active {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(0, 102, 255, 0.25);
+    }
+
+    /* Card Hover Effects */
+    .card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .card-hover:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Gradient Text */
+    .gradient-text {
+      background: linear-gradient(135deg, #0066FF 0%, #00D4FF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Animated Gradient Background */
+    .animated-gradient {
+      background: linear-gradient(-45deg, #0066FF, #00D4FF, #0080FF, #3399FF);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+    }
+
+    /* Shimmer Effect */
+    .shimmer {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shimmer::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      animation: shimmer 2s infinite;
+    }
+
+    /* Smooth Scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Animation Delays */
+    .animation-delay-100 {
+      animation-delay: 0.1s;
+    }
+
+    .animation-delay-200 {
+      animation-delay: 0.2s;
+    }
+
+    .animation-delay-300 {
+      animation-delay: 0.3s;
+    }
+
+    .animation-delay-400 {
+      animation-delay: 0.4s;
+    }
+
+    .animation-delay-500 {
+      animation-delay: 0.5s;
+    }
+
+    .animation-delay-1000 {
+      animation-delay: 1s;
+    }
+
+    .animation-delay-2000 {
+      animation-delay: 2s;
+    }
+
+    /* Focus Visible for Accessibility */
+    *:focus-visible {
+      outline: 2px solid #0066FF;
+      outline-offset: 2px;
+    }
+
+    /* Mesh Gradient Background */
+    .mesh-bg {
+      background:
+        radial-gradient(at 0% 0%, rgba(0, 102, 255, 0.12) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(0, 212, 255, 0.08) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(0, 102, 255, 0.10) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, rgba(51, 153, 255, 0.08) 0px, transparent 50%);
+    }
+  </style>
+  <link rel="stylesheet" href="/index.css">
 </head>
-<body class="bg-background-light text-text-main font-display antialiased selection:bg-primary/20 selection:text-primary">
-    <div id="root"></div>
-<script type="module" src="/index.tsx"></script>
+
+<body
+  class="bg-background-light text-text-main font-display antialiased selection:bg-primary/20 selection:text-primary">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
 </body>
+
 </html>

@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Values } from './components/Values';
@@ -10,7 +10,27 @@ import { CaseStudies } from './components/CaseStudies';
 import { CTA } from './components/CTA';
 import { Footer } from './components/Footer';
 
+// Declare AOS to avoid TS errors
+declare var AOS: any;
+
 function App() {
+  useEffect(() => {
+    // Refresh AOS once components are mounted
+    if (typeof AOS !== 'undefined') {
+      AOS.init({
+        duration: 800,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 50,
+      });
+      // Periodically refresh AOS to catch dynamic content or late renders
+      const timer = setInterval(() => {
+        AOS.refresh();
+      }, 1000);
+      return () => clearInterval(timer);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-background-light overflow-x-hidden">
       <Navbar />

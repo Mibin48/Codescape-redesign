@@ -3,75 +3,123 @@ import React from 'react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-50 border-t border-gray-200 pt-20 pb-10" id="contact">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          <div>
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-8 rounded bg-primary flex items-center justify-center text-white font-bold text-lg">C</div>
-              <span className="text-2xl font-bold text-text-main tracking-tight">CODESCAPE</span>
+    <footer className="relative bg-gray-900 pt-24 pb-12 overflow-hidden" id="contact">
+      {/* Decorative Background Elements */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full filter blur-3xl -translate-y-1/2"></div>
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full filter blur-3xl translate-y-1/2"></div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+          {/* Brand Column */}
+          <div className="lg:col-span-1">
+            <div className="flex items-center gap-3 mb-8 group cursor-pointer">
+              <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center text-white font-bold text-xl shadow-button group-hover:scale-110 transition-transform duration-300">
+                C
+              </div>
+              <span className="text-2xl font-bold text-white tracking-tight">
+                CODE<span className="gradient-text">SCAPE</span>
+              </span>
             </div>
-            <p className="text-text-muted text-sm leading-relaxed mb-6">
-              Empowering businesses through innovative technology and creative design solutions.
+            <p className="text-gray-400 text-base leading-relaxed mb-8 max-w-xs">
+              Empowering businesses through innovative technology and creative design solutions. Where <span className="text-white font-medium">Creativity Meets Technology</span>.
             </p>
+            <div className="flex space-x-4">
+              {[
+                { name: 'LinkedIn', icon: 'linkedin', color: 'hover:bg-[#0077b5]' },
+                { name: 'Twitter', icon: 'twitter', color: 'hover:bg-[#1da1f2]' },
+                { name: 'GitHub', icon: 'github', color: 'hover:bg-[#333]' },
+                { name: 'Instagram', icon: 'instagram', color: 'hover:bg-[#e1306c]' }
+              ].map((social) => (
+                <a
+                  key={social.name}
+                  className={`w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 border border-white/10 ${social.color}`}
+                  href="#"
+                >
+                  <span className="sr-only">{social.name}</span>
+                  <span className="material-icons text-xl">share</span>
+                </a>
+              ))}
+            </div>
           </div>
-          
+
+          {/* Services Column */}
           <div>
-            <h4 className="text-text-main font-bold mb-6 uppercase text-xs tracking-wider">Services</h4>
-            <ul className="space-y-3">
-              {['Web Development', 'Mobile Applications', 'Cloud Solutions', 'UI/UX Design', 'Consulting'].map(item => (
-                <li key={item}><a className="text-text-muted hover:text-primary transition-colors text-sm" href="#">{item}</a></li>
+            <h4 className="text-white font-bold mb-8 uppercase text-xs tracking-[0.2em]">Our Services</h4>
+            <ul className="space-y-4">
+              {['Web Development', 'Mobile Applications', 'Cloud Solutions', 'UI/UX Design', 'AI/ML Integration'].map(item => (
+                <li key={item}>
+                  <a className="text-gray-400 hover:text-primary transition-all duration-300 text-sm flex items-center gap-2 group" href="#">
+                    <span className="w-1 h-1 rounded-full bg-primary/40 group-hover:w-2 transition-all"></span>
+                    {item}
+                  </a>
+                </li>
               ))}
             </ul>
           </div>
-          
+
+          {/* Company Column */}
           <div>
-            <h4 className="text-text-main font-bold mb-6 uppercase text-xs tracking-wider">Company</h4>
-            <ul className="space-y-3">
-              {['About Us', 'Our Work', 'Careers', 'Blog', 'Privacy Policy'].map(item => (
-                <li key={item}><a className="text-text-muted hover:text-primary transition-colors text-sm" href="#">{item}</a></li>
+            <h4 className="text-white font-bold mb-8 uppercase text-xs tracking-[0.2em]">Quick Links</h4>
+            <ul className="space-y-4">
+              {['About Us', 'Latest Projects', 'Career Openings', 'Tech Blog', 'Privacy & Terms'].map(item => (
+                <li key={item}>
+                  <a className="text-gray-400 hover:text-primary transition-all duration-300 text-sm flex items-center gap-2 group" href="#">
+                    <span className="w-1 h-1 rounded-full bg-primary/40 group-hover:w-2 transition-all"></span>
+                    {item}
+                  </a>
+                </li>
               ))}
             </ul>
           </div>
-          
+
+          {/* Contact Column */}
           <div>
-            <h4 className="text-text-main font-bold mb-6 uppercase text-xs tracking-wider">Stay Updated</h4>
-            <p className="text-text-muted text-sm mb-4">Subscribe to our newsletter for the latest tech insights.</p>
-            <form className="flex gap-2 mb-6" onSubmit={(e) => e.preventDefault()}>
-              <input 
-                className="bg-white border border-gray-300 text-text-main text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-opacity-50" 
-                placeholder="Email address" 
+            <h4 className="text-white font-bold mb-8 uppercase text-xs tracking-[0.2em]">Newsletter</h4>
+            <p className="text-gray-400 text-sm mb-6">Stay informed with our latest news and tech insights.</p>
+            <form className="relative group" onSubmit={(e) => e.preventDefault()}>
+              <input
+                className="w-full bg-white/5 border border-white/10 text-white text-sm rounded-xl focus:ring-primary focus:border-primary block p-4 pr-16 placeholder-gray-500 focus:outline-none focus:bg-white/10 transition-all"
+                placeholder="Your email address"
                 type="email"
               />
-              <button className="bg-primary hover:bg-primary-dark text-white rounded-lg px-4 py-2 transition-colors shadow-sm" type="submit">
-                <span className="material-icons text-sm">send</span>
+              <button
+                className="absolute right-2 top-2 bottom-2 bg-gradient-primary hover:shadow-glow text-white rounded-lg px-4 transition-all duration-300 transform active:scale-95"
+                type="submit"
+              >
+                <span className="material-icons">east</span>
               </button>
             </form>
-            <div className="flex space-x-4">
-              <a className="text-gray-400 hover:text-primary transition-colors" href="#"><span className="sr-only">LinkedIn</span>
-                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
-              </a>
-              <a className="text-gray-400 hover:text-primary transition-colors" href="#"><span className="sr-only">Twitter</span>
-                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
-              </a>
-              <a className="text-gray-400 hover:text-primary transition-colors" href="#"><span className="sr-only">Facebook</span>
-                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg>
-              </a>
+
+            <div className="mt-8 space-y-4">
+              <div className="flex items-start gap-4 text-sm text-gray-400">
+                <span className="material-icons text-primary/60">location_on</span>
+                <span>Muvattupuzha, Kerala, <br />India - 686661</span>
+              </div>
+              <div className="flex items-center gap-4 text-sm text-gray-400">
+                <span className="material-icons text-primary/60">email</span>
+                <a href="mailto:contact@thecodescape.in" className="hover:text-primary transition-colors">contact@thecodescape.in</a>
+              </div>
+              <div className="flex items-center gap-4 text-sm text-gray-400">
+                <span className="material-icons text-primary/60">call</span>
+                <a href="tel:+918921258262" className="hover:text-primary transition-colors">+91 8921258262</a>
+              </div>
             </div>
           </div>
         </div>
-        
-        <div className="border-t border-gray-200 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-gray-500 text-sm flex flex-col md:flex-row gap-4 items-center">
-            <span>© 2023 CODESCAPE. All rights reserved.</span>
-            <span className="hidden md:inline text-gray-300">|</span>
-            <span className="flex items-center gap-1"><span className="material-icons text-xs">location_on</span> Muvattupuzha, Kerala</span>
-            <span className="hidden md:inline text-gray-300">|</span>
-            <span className="flex items-center gap-1"><span className="material-icons text-xs">email</span> hello@codescape.com</span>
+
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+          <div className="text-gray-500 text-xs">
+            © {new Date().getFullYear()} <span className="text-gray-400 font-semibold tracking-wide">CODESCAPE</span>. All rights reserved.
+            <span className="hidden md:inline mx-3 opacity-30">|</span>
+            <br className="md:hidden" />
+            Crafting Digital Excellence Worldwide.
           </div>
-          <div className="flex gap-6">
-            <a className="text-gray-500 hover:text-primary text-sm transition-colors" href="#">Terms</a>
-            <a className="text-gray-500 hover:text-primary text-sm transition-colors" href="#">Privacy</a>
+          <div className="flex gap-8">
+            {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map(item => (
+              <a key={item} className="text-gray-500 hover:text-white text-xs transition-colors" href="#">{item}</a>
+            ))}
           </div>
         </div>
       </div>
