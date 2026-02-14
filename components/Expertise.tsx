@@ -8,125 +8,138 @@ const services = [
     desc: 'High-performance websites and web applications built with modern frameworks and best practices.',
     tech: ['React', 'Next.js', 'Node.js'],
     projects: 45,
-    featured: true
+    color: 'from-blue-500 to-cyan-400'
   },
   {
     icon: 'smartphone',
     title: 'Mobile Apps',
     desc: 'Native and cross-platform mobile experiences that users love on iOS and Android.',
     tech: ['React Native', 'Flutter', 'Swift'],
-    projects: 28
+    projects: 28,
+    color: 'from-violet-500 to-purple-400'
   },
   {
     icon: 'cloud_queue',
     title: 'Cloud Solutions',
     desc: 'Scalable cloud infrastructure, migration, and serverless architecture for modern apps.',
     tech: ['AWS', 'Azure', 'Docker'],
-    projects: 32
+    projects: 32,
+    color: 'from-emerald-500 to-teal-400'
   },
   {
     icon: 'palette',
     title: 'UI/UX Design',
     desc: 'User-centric design that creates intuitive and beautiful digital products.',
     tech: ['Figma', 'Adobe XD', 'Sketch'],
-    projects: 52
+    projects: 52,
+    color: 'from-amber-500 to-orange-400'
   }
 ];
 
 export const Expertise: React.FC = () => {
   return (
-    <section className="py-24 bg-white relative overflow-hidden" id="services">
-      {/* Subtle Background */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-blue-50/30 to-transparent"></div>
+    <section className="py-32 bg-white relative overflow-hidden" id="services">
+      {/* Background Decorations */}
+      <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-blue-50/60 rounded-full blur-3xl -translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-violet-50/40 rounded-full blur-3xl translate-x-1/4 translate-y-1/4 pointer-events-none"></div>
+
+      {/* Grid Dots Background */}
+      <div className="absolute inset-0 bg-grid-dots opacity-30 pointer-events-none"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div
-          className="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-gray-100 pb-8"
-          data-aos="fade-up"
-        >
-          <div>
-            <h2 className="text-sm text-primary font-bold tracking-wider uppercase mb-3">What We Do</h2>
-            <p className="text-4xl md:text-5xl font-bold text-text-main mb-2">
-              Our <span className="gradient-text">Expertise</span>
-            </p>
-            <p className="text-lg md:text-xl text-text-muted mt-2">
-              Comprehensive digital solutions for modern businesses.
-            </p>
-          </div>
-          <a
-            className="hidden md:flex items-center text-primary font-semibold hover:text-primary-dark transition-colors mt-4 md:mt-0 group px-6 py-3 border-2 border-primary rounded-xl hover:bg-primary hover:text-white"
-            href="#"
-          >
-            View All Services
-            <span className="material-icons ml-2 text-lg transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
-          </a>
+
+        {/* Header */}
+        <div className="text-center mb-20" data-aos="fade-up">
+          <span className="inline-flex items-center gap-2 text-primary font-bold tracking-wider uppercase text-xs mb-6 px-5 py-2 rounded-full border border-primary/20 bg-primary/5">
+            <span className="material-icons text-sm">auto_awesome</span>
+            What We Do
+          </span>
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 tracking-tight mb-6 leading-[0.95]">
+            Engineering<br />
+            <span className="gradient-text">Excellence</span>
+          </h2>
+          <p className="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
+            We transform complex challenges into elegant, scalable digital solutions that drive measurable business impact.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Bento Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {services.map((s, i) => (
             <div
               key={i}
-              className={`group card-hover rounded-2xl bg-gradient-to-br from-gray-50 to-white border border-gray-200 hover:border-primary/30 p-8 flex flex-col justify-between cursor-pointer ${s.featured ? 'md:col-span-2 md:row-span-1 lg:col-span-1' : ''
-                }`}
+              className="group relative rounded-3xl bg-white border border-gray-200/80 hover:border-transparent overflow-hidden cursor-pointer transition-all duration-500 hover:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.12)]"
               data-aos="fade-up"
               data-aos-delay={i * 100}
-              style={{ minHeight: s.featured ? '360px' : '340px' }}
             >
-              <div>
-                {/* Icon */}
-                <div className="w-14 h-14 bg-gradient-primary rounded-2xl shadow-button flex items-center justify-center text-white mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                  <span className="material-icons text-2xl">{s.icon}</span>
+              {/* Hover Gradient Border Effect */}
+              <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${s.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+              <div className="absolute inset-[1.5px] rounded-[22px] bg-white z-[1]"></div>
+
+              <div className="relative z-[2] p-10 lg:p-12 flex flex-col min-h-[340px]">
+
+                {/* Top Row: Icon + Project Count */}
+                <div className="flex items-start justify-between mb-8">
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${s.color} shadow-lg flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                    <span className="material-icons text-white text-3xl">{s.icon}</span>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-3xl font-black text-gray-900 leading-none">{s.projects}+</span>
+                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mt-1">Projects</p>
+                  </div>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-text-main mb-3 group-hover:text-primary transition-colors">
+                <h3 className="text-2xl lg:text-3xl font-black text-gray-900 mb-4 group-hover:text-primary transition-colors duration-300 tracking-tight">
                   {s.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-text-muted leading-relaxed mb-4">{s.desc}</p>
+                <p className="text-gray-500 text-base leading-relaxed mb-8 flex-grow">
+                  {s.desc}
+                </p>
 
-                {/* Tech Stack Badges */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {s.tech.map((tech, idx) => (
-                    <span
-                      key={idx}
-                      className="text-xs px-3 py-1 bg-white border border-gray-200 rounded-full text-text-muted font-medium group-hover:border-primary group-hover:text-primary transition-colors"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                {/* Bottom: Tech Tags + Arrow */}
+                <div className="flex items-center justify-between mt-auto pt-6 border-t border-gray-100 group-hover:border-gray-200 transition-colors">
+                  <div className="flex flex-wrap gap-2">
+                    {s.tech.map((tech, idx) => (
+                      <span
+                        key={idx}
+                        className="text-xs px-3 py-1.5 bg-gray-50 border border-gray-100 rounded-full text-gray-500 font-semibold group-hover:border-primary/20 group-hover:text-primary group-hover:bg-primary/5 transition-all duration-300"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="w-10 h-10 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center group-hover:bg-primary group-hover:border-primary group-hover:shadow-button transition-all duration-300 flex-shrink-0 ml-4">
+                    <span className="material-icons text-gray-400 text-lg group-hover:text-white group-hover:translate-x-0.5 transition-all duration-300">arrow_forward</span>
+                  </div>
                 </div>
-              </div>
-
-              <div className="pt-4 border-t border-gray-100 mt-4">
-                {/* Project Count (visible on hover) */}
-                <div className="flex items-center justify-between opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 mb-3">
-                  <span className="text-sm text-text-muted">
-                    <span className="font-bold text-primary">{s.projects}+</span> projects completed
-                  </span>
-                </div>
-
-                {/* Learn More Link */}
-                <span className="inline-flex items-center text-primary text-sm font-semibold opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                  Explore service
-                  <span className="material-icons text-sm ml-1 transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                </span>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Mobile CTA */}
-        <div className="md:hidden mt-10 text-center" data-aos="fade-up">
-          <a
-            className="inline-flex items-center justify-center text-primary font-semibold hover:text-primary-dark transition-colors px-6 py-3 border-2 border-primary rounded-xl hover:bg-primary hover:text-white w-full sm:w-auto"
-            href="#"
-          >
-            View All Services
-            <span className="material-icons ml-2">arrow_forward</span>
-          </a>
+        {/* Stats Row */}
+        <div
+          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          {[
+            { value: '157+', label: 'Projects Delivered', icon: 'rocket_launch' },
+            { value: '98%', label: 'Client Satisfaction', icon: 'sentiment_very_satisfied' },
+            { value: '24/7', label: 'Support Available', icon: 'support_agent' },
+            { value: '6+', label: 'Years Experience', icon: 'verified' }
+          ].map((stat, i) => (
+            <div key={i} className="text-center p-6 rounded-2xl bg-gray-50/80 border border-gray-100 hover:border-primary/20 hover:bg-primary/5 transition-all duration-300 group cursor-default">
+              <span className="material-icons text-primary text-2xl mb-3 block group-hover:scale-110 transition-transform">{stat.icon}</span>
+              <div className="text-3xl md:text-4xl font-black text-gray-900 mb-1">{stat.value}</div>
+              <div className="text-xs font-bold text-gray-400 uppercase tracking-wider">{stat.label}</div>
+            </div>
+          ))}
         </div>
+
       </div>
     </section>
   );
