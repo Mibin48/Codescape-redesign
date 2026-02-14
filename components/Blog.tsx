@@ -61,7 +61,7 @@ export const Blog: React.FC = () => {
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
             <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent-500/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
 
-            <div className="max-w-7xl mx-auto px-6 lg:px-12">
+            <div className="max-w-7xl mx-auto px-4">
                 {/* Header */}
                 <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-20 gap-8" data-aos="fade-up">
                     <div>
@@ -178,6 +178,55 @@ export const Blog: React.FC = () => {
                         </div>
                     ))}
 
+                </div>
+
+                {/* ═══ VIDEO ARTICLE CARD ═══ */}
+                <div className="mt-12 group rounded-3xl overflow-hidden relative cursor-pointer" data-aos="fade-up">
+                    <div className="relative aspect-[21/9]">
+                        <video
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            poster="https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=1200&auto=format&fit=crop"
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        >
+                            <source src="https://assets.mixkit.co/videos/preview/mixkit-businesswoman-working-at-her-laptop-in-a-modern-office-4134-large.mp4" type="video/mp4" />
+                        </video>
+                        <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/50 to-transparent"></div>
+
+                        {/* Video Content */}
+                        <div className="absolute inset-0 flex items-center p-10 lg:p-16">
+                            <div className="max-w-lg">
+                                <div className="flex items-center gap-3 mb-4">
+                                    <span className="px-3 py-1 rounded-full bg-red-500/90 text-white text-[10px] font-black tracking-widest uppercase flex items-center gap-1.5">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+                                        Video
+                                    </span>
+                                    <span className="text-white/40 text-xs font-bold">15 min</span>
+                                </div>
+                                <h3 className="text-2xl md:text-3xl font-black text-white leading-tight mb-3 group-hover:text-primary-300 transition-colors">
+                                    Tech Talk: Building Real-Time Systems at Scale
+                                </h3>
+                                <p className="text-white/50 text-sm mb-6 max-w-md">
+                                    Our CTO discusses the patterns and trade-offs in building systems that handle millions of concurrent connections.
+                                </p>
+                                <div className="flex items-center gap-5 group/play cursor-pointer">
+                                    <div className="relative">
+                                        <div className="absolute inset-0 rounded-full bg-primary/40 animate-ping duration-[3000ms]"></div>
+                                        <div className="absolute -inset-2 rounded-full bg-primary/20 animate-pulse duration-[1500ms]"></div>
+                                        <div className="w-16 h-16 rounded-full bg-white text-gray-950 flex items-center justify-center relative z-10 group-hover:bg-primary group-hover:text-white group-hover:scale-110 group-hover:rotate-[360deg] transition-all duration-700 shadow-xl">
+                                            <span className="material-icons text-2xl ml-1">play_arrow</span>
+                                        </div>
+                                    </div>
+                                    <div className="space-y-0.5">
+                                        <span className="text-white/40 text-[10px] font-black uppercase tracking-widest block">Tutorial</span>
+                                        <span className="text-white font-black text-lg group-hover:text-primary transition-colors">Watch Now</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Bottom CTA Bar */}

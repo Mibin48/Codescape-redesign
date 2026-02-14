@@ -11,6 +11,7 @@ export const Hero: React.FC = () => {
                     muted
                     loop
                     playsInline
+                    poster="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600&auto=format&fit=crop"
                     className="w-full h-full object-cover"
                 >
                     <source src="/Logo_Animation_Video_Ready.mp4" type="video/mp4" />
@@ -21,7 +22,7 @@ export const Hero: React.FC = () => {
 
             {/* Content Section Below Video */}
             <div className="relative z-10 w-full pb-24 pt-10">
-                <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+                <div className="max-w-[1400px] mx-auto px-4">
 
                     {/* Top Badges */}
                     <div className="flex flex-wrap gap-4 mb-20" data-aos="fade-right">
@@ -100,6 +101,37 @@ export const Hero: React.FC = () => {
                             </div>
                         </div>
 
+                    </div>
+
+                    {/* ═══ PROJECT SHOWCASE GALLERY ═══ */}
+                    <div className="mt-28" data-aos="fade-up" data-aos-delay="100">
+                        <div className="flex items-center justify-between mb-10">
+                            <h3 className="text-sm font-black text-gray-400 uppercase tracking-[0.3em]">Recent Work</h3>
+                            <a href="#projects" className="text-sm font-bold text-primary flex items-center gap-2 hover:gap-3 transition-all">
+                                View all <span className="material-icons text-sm">arrow_forward</span>
+                            </a>
+                        </div>
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            {[
+                                { img: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=600&auto=format&fit=crop', label: 'Nova Banking' },
+                                { img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop', label: 'Analytics Dashboard' },
+                                { img: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=600&auto=format&fit=crop', label: 'E-Commerce Platform' },
+                                { img: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=600&auto=format&fit=crop', label: 'Health Platform' }
+                            ].map((p, i) => (
+                                <div key={i} className="group relative rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer">
+                                    <img
+                                        src={p.img}
+                                        alt={p.label}
+                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                    <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                                        <p className="text-white text-sm font-bold">{p.label}</p>
+                                        <p className="text-white/60 text-[10px] font-bold uppercase tracking-wider">View Project →</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

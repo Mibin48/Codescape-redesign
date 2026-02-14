@@ -4,10 +4,24 @@ import React from 'react';
 export const CTA: React.FC = () => {
   return (
     <section className="relative overflow-hidden" id="contact">
-      {/* Dark top section with the main CTA */}
       <div className="relative bg-gray-950 py-32 overflow-hidden">
+        {/* Background Video */}
+        <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1200&auto=format&fit=crop"
+            className="w-full h-full object-cover opacity-15"
+          >
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-man-working-on-a-laptop-keyboard-4132-large.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gray-950/80"></div>
+        </div>
+
         {/* Animated Background Elements */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 z-[1]">
           {/* Gradient Orbs */}
           <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] animate-blob"></div>
           <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-accent-500/10 rounded-full blur-[100px] animate-blob-slow"></div>
@@ -20,7 +34,7 @@ export const CTA: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-gray-950 via-transparent to-gray-950 opacity-60"></div>
         </div>
 
-        <div className="relative max-w-5xl mx-auto px-6 lg:px-8">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
           {/* Badge */}
           <div className="text-center mb-12" data-aos="fade-down">
             <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-white/60 text-xs font-bold tracking-widest uppercase">

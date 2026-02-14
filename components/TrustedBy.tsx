@@ -2,9 +2,21 @@
 import React from 'react';
 
 const logos = [
-  'ACME Corp', 'GlobalTech', 'Nebula', 'FoxRun', 'Circle.io', 'Trevva',
-  'Goldline', 'Aven', 'TechFlow', 'DataSync', 'CloudBurst', 'PixelPerfect',
-  'InnoVentures', 'NexGen Labs', 'Quantum'
+  { name: 'ACME Corp', img: 'https://img.logoipsum.com/243.svg' },
+  { name: 'GlobalTech', img: 'https://img.logoipsum.com/244.svg' },
+  { name: 'Nebula', img: 'https://img.logoipsum.com/245.svg' },
+  { name: 'FoxRun', img: 'https://img.logoipsum.com/246.svg' },
+  { name: 'Circle.io', img: 'https://img.logoipsum.com/247.svg' },
+  { name: 'Trevva', img: 'https://img.logoipsum.com/248.svg' },
+  { name: 'Goldline', img: 'https://img.logoipsum.com/249.svg' },
+  { name: 'Aven', img: 'https://img.logoipsum.com/250.svg' },
+  { name: 'TechFlow', img: 'https://img.logoipsum.com/251.svg' },
+  { name: 'DataSync', img: 'https://img.logoipsum.com/252.svg' },
+  { name: 'CloudBurst', img: 'https://img.logoipsum.com/253.svg' },
+  { name: 'PixelPerfect', img: 'https://img.logoipsum.com/254.svg' },
+  { name: 'InnoVentures', img: 'https://img.logoipsum.com/255.svg' },
+  { name: 'NexGen Labs', img: 'https://img.logoipsum.com/256.svg' },
+  { name: 'Quantum', img: 'https://img.logoipsum.com/257.svg' },
 ];
 
 export const TrustedBy: React.FC = () => {
@@ -23,31 +35,19 @@ export const TrustedBy: React.FC = () => {
         </p>
       </div>
 
-      {/* Infinite Scroll Container */}
+      {/* Infinite Scroll Container with Logo Images */}
       <div className="relative flex overflow-x-hidden">
         <div className="py-4 animate-scroll whitespace-nowrap flex items-center gap-16 px-4">
           {[...logos, ...logos, ...logos].map((logo, i) => (
             <div
               key={i}
-              className="inline-flex items-center justify-center min-w-[180px] group cursor-default"
+              className="inline-flex items-center justify-center min-w-[160px] group cursor-default"
             >
-              <span
-                className="text-2xl font-bold text-gray-400 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 hover:text-primary transition-all duration-300 select-none transform hover:scale-110"
-                style={{
-                  filter: 'grayscale(100%)',
-                  WebkitFilter: 'grayscale(100%)'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.filter = 'grayscale(0%)';
-                  e.currentTarget.style.WebkitFilter = 'grayscale(0%)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.filter = 'grayscale(100%)';
-                  e.currentTarget.style.WebkitFilter = 'grayscale(100%)';
-                }}
-              >
-                {logo}
-              </span>
+              <img
+                src={logo.img}
+                alt={logo.name}
+                className="h-10 w-auto object-contain grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300 transform hover:scale-110"
+              />
             </div>
           ))}
         </div>

@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 
 const values = [
@@ -5,25 +6,29 @@ const values = [
     num: '01',
     title: 'Innovation First',
     desc: "We don't just follow trends; we set them. Our team constantly explores cutting-edge technologies.",
-    icon: 'bolt'
+    icon: 'bolt',
+    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1200&auto=format&fit=crop'
   },
   {
     num: '02',
     title: 'Technical Excellence',
     desc: "Clean code, robust architecture, and scalable solutions. We build software that stands the test of time.",
-    icon: 'terminal'
+    icon: 'terminal',
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop'
   },
   {
     num: '03',
     title: 'Quality & Trust',
     desc: "Transparency in process and rigor in testing. We deliver what we promise with impeccable quality.",
-    icon: 'verified_user'
+    icon: 'verified_user',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop'
   },
   {
     num: '04',
     title: 'Global Impact',
     desc: "Our solutions are engineered to scale worldwide, impacting millions across different continents.",
-    icon: 'language'
+    icon: 'language',
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop'
   }
 ];
 
@@ -45,14 +50,18 @@ export const Values = () => {
         {/* Left Side: Fixed Content */}
         <div className="lg:w-1/2 h-full flex flex-col justify-center p-8 sm:p-12 lg:p-16 xl:p-24 relative overflow-hidden bg-gray-950 lg:border-r border-white/5 z-20">
 
-          {/* Background Image */}
-          <div className="absolute inset-0 z-0">
-            <img
-              src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop"
-              alt="Engineering"
-              className="w-full h-full object-cover grayscale opacity-20"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950/98 to-transparent"></div>
+          {/* Background Image — changes with active card */}
+          <div className="absolute inset-0 z-0 transition-opacity duration-700">
+            {values.map((v, i) => (
+              <img
+                key={i}
+                src={v.image}
+                alt={v.title}
+                className={`absolute inset-0 w-full h-full object-cover grayscale transition-opacity duration-700 ${activeIndex === i ? 'opacity-15' : 'opacity-0'
+                  }`}
+              />
+            ))}
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950/95 to-gray-950/80"></div>
           </div>
 
           {/* Content */}
@@ -91,12 +100,22 @@ export const Values = () => {
             <div
               key={i}
               className={`absolute inset-0 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] ${activeIndex === i
-                  ? 'opacity-100 translate-x-0 z-10'
-                  : 'opacity-0 translate-x-12 z-0'
+                ? 'opacity-100 translate-x-0 z-10'
+                : 'opacity-0 translate-x-12 z-0'
                 }`}
             >
               <div className={`w-full h-full flex flex-col justify-center p-8 sm:p-12 lg:p-16 xl:p-24 relative overflow-hidden ${i % 2 === 0 ? 'bg-[#0A0D1A]' : 'bg-[#0F121F]'
                 }`}>
+
+                {/* Background image for right panel */}
+                <div className="absolute inset-0">
+                  <img
+                    src={v.image}
+                    alt={v.title}
+                    className="w-full h-full object-cover opacity-[0.07]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#0A0D1A]/90"></div>
+                </div>
 
                 {/* Massive Background Number */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20rem] sm:text-[25rem] md:text-[30rem] lg:text-[35rem] font-black text-white/[0.015] select-none pointer-events-none leading-none">
@@ -127,7 +146,7 @@ export const Values = () => {
             </div>
           ))}
 
-          {/* Navigation Buttons - Light Right UI */}
+          {/* Navigation Buttons */}
           <div className="absolute bottom-12 right-12 z-30 flex gap-4">
             <button
               onClick={prevCard}

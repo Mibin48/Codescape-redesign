@@ -19,7 +19,7 @@ export const Navbar: React.FC = () => {
         ? 'h-16 glass border-b border-gray-200/50 shadow-sm'
         : 'h-20 bg-white/80 backdrop-blur-sm border-b border-transparent'
         }`}>
-        <div className="w-full px-4 sm:px-6 lg:px-12 h-full">
+        <div className="w-full px-4 h-full">
           <div className="flex items-center justify-between h-full">
             {/* Logo */}
             <a href="#home" className="flex-shrink-0 flex items-center gap-3 cursor-pointer group">

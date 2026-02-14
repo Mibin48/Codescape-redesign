@@ -65,7 +65,7 @@ export const CaseStudies: React.FC = () => {
       <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/5 rounded-full filter blur-3xl"></div>
       <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-accent/5 rounded-full filter blur-3xl"></div>
 
-      <div className="max-w-[1600px] mx-auto relative z-10 px-6">
+      <div className="max-w-[1600px] mx-auto relative z-10 px-4">
         <div className="text-center mb-24" data-aos="fade-up">
           <span className="text-primary font-black uppercase tracking-[0.4em] text-[11px] mb-4 block">Our Portfolio</span>
           <h2 className="text-6xl md:text-7xl font-black text-gray-950 tracking-tighter mb-6">
@@ -174,6 +174,68 @@ export const CaseStudies: React.FC = () => {
           <button onClick={next} className="w-16 h-16 rounded-full border border-gray-200 bg-white flex items-center justify-center hover:bg-gray-950 hover:text-white hover:border-gray-950 transition-all duration-300 shadow-sm active:scale-95 group">
             <span className="material-icons transition-transform group-hover:translate-x-1">east</span>
           </button>
+        </div>
+
+        {/* ═══ PROCESS VIDEO SHOWCASE ═══ */}
+        <div className="mt-24 rounded-3xl overflow-hidden relative group" data-aos="fade-up">
+          <div className="relative aspect-[21/9] bg-gray-950">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              poster="https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=1200&auto=format&fit=crop"
+              className="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity duration-500"
+            >
+              <source src="https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-his-laptop-34440-large.mp4" type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-950/90 via-gray-950/40 to-transparent"></div>
+
+            {/* Overlay Content */}
+            <div className="absolute inset-0 flex items-center p-12 lg:p-20">
+              <div className="max-w-lg">
+                <span className="text-primary text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">Our Process</span>
+                <h3 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight leading-[0.95]">
+                  From Concept to<br />Production
+                </h3>
+                <p className="text-white/50 text-sm md:text-base font-medium leading-relaxed mb-8 max-w-md">
+                  Watch how we transform ideas into polished, production-ready digital experiences through our battle-tested engineering process.
+                </p>
+                <button className="inline-flex items-center gap-4 px-8 py-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl text-white font-bold text-sm hover:bg-white/20 transition-all duration-300 group/btn shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
+                  <div className="relative">
+                    <div className="absolute inset-0 rounded-full bg-primary/40 animate-ping duration-[2000ms]"></div>
+                    <div className="w-12 h-12 rounded-full bg-white text-gray-950 flex items-center justify-center relative z-10 group-hover/btn:bg-primary group-hover/btn:text-white group-hover/btn:scale-110 group-hover/btn:rotate-[360deg] transition-all duration-700">
+                      <span className="material-icons text-xl ml-0.5">play_arrow</span>
+                    </div>
+                  </div>
+                  <div className="text-left">
+                    <div className="text-xs font-black uppercase tracking-[0.2em] opacity-50 mb-0.5">Watch</div>
+                    <div className="text-base">Showreel 2026</div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ═══ PROJECT THUMBNAILS STRIP ═══ */}
+        <div className="mt-16 grid grid-cols-3 md:grid-cols-6 gap-3" data-aos="fade-up" data-aos-delay="100">
+          {[
+            'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=400&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=400&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=400&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=400&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=400&auto=format&fit=crop',
+          ].map((src, i) => (
+            <div key={i} className="relative rounded-2xl overflow-hidden aspect-square group cursor-pointer">
+              <img src={src} alt={`Project ${i + 1}`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors duration-300"></div>
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span className="material-icons text-white text-2xl drop-shadow-lg">zoom_in</span>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

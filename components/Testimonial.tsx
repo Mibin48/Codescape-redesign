@@ -14,7 +14,8 @@ const testimonials = [
     role: 'Founder at AllSome',
     text: 'We are subscribing Pro and have only good words for the awesome works! Fast matching, outstanding communication, quality works and cost saving! We highly recommend CODESCAPE and enjoy peace of mind!',
     avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop',
-    size: 'medium'
+    size: 'medium',
+    featuredImg: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop'
   },
   {
     name: 'Nik Kotov',
@@ -50,7 +51,8 @@ const testimonials = [
     role: 'Co-Founder & CEO at InQuery',
     text: 'CODESCAPE really quickly matched me to a designer for what I thought would be a short project, but we\'ve now been working together for over a year on everything from UI to marketing assets.',
     avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&auto=format&fit=crop',
-    size: 'medium'
+    size: 'medium',
+    featuredImg: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop'
   },
   {
     name: 'David Head',

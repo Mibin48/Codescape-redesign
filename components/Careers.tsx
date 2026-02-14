@@ -108,7 +108,7 @@ export const Careers: React.FC = () => {
             <div className="absolute top-0 left-0 w-[700px] h-[700px] bg-violet-50/50 rounded-full blur-3xl -translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
             <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl translate-x-1/4 translate-y-1/4 pointer-events-none"></div>
 
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto px-4 relative z-10">
 
                 {/* ═══ SECTION 1: HIRING MESSAGING ═══ */}
                 <div className="text-center mb-24" data-aos="fade-up">
@@ -123,6 +123,78 @@ export const Careers: React.FC = () => {
                     <p className="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
                         We're building the future of digital experiences — and we're looking for passionate people to help us do it. If you thrive on solving hard problems, you belong here.
                     </p>
+                </div>
+
+                {/* ═══ TEAM PHOTO COLLAGE ═══ */}
+                <div className="mb-28 relative" data-aos="fade-up" data-aos-delay="100">
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+                        {/* Photo 1: Team at work */}
+                        <div className="relative rounded-3xl overflow-hidden h-64 md:h-80 group col-span-1 md:row-span-2 md:h-full">
+                            <img
+                                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop"
+                                alt="Team collaborating"
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
+                            <div className="absolute bottom-4 left-4 text-white">
+                                <p className="text-xs font-bold uppercase tracking-widest opacity-70">Team Life</p>
+                                <p className="text-lg font-black">Collaborative Spirit</p>
+                            </div>
+                        </div>
+
+                        {/* Photo 2: Modern office */}
+                        <div className="relative rounded-3xl overflow-hidden h-64 md:h-full group">
+                            <img
+                                src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop"
+                                alt="Modern workspace"
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 to-transparent"></div>
+                        </div>
+
+                        {/* Photo 3: Brainstorming */}
+                        <div className="relative rounded-3xl overflow-hidden h-64 md:h-full group">
+                            <img
+                                src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?q=80&w=800&auto=format&fit=crop"
+                                alt="Team brainstorming"
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 to-transparent"></div>
+                        </div>
+
+                        {/* Photo 4: Presentation */}
+                        <div className="relative rounded-3xl overflow-hidden h-64 md:h-full group hidden md:block">
+                            <img
+                                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=800&auto=format&fit=crop"
+                                alt="Team presentation"
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 to-transparent"></div>
+                        </div>
+
+                        {/* Photo 5: Celebration */}
+                        <div className="relative rounded-3xl overflow-hidden h-64 md:h-full group hidden md:block">
+                            <img
+                                src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=800&auto=format&fit=crop"
+                                alt="Team celebration"
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 to-transparent"></div>
+                        </div>
+                    </div>
+
+                    {/* Floating badge */}
+                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-white rounded-2xl shadow-xl px-8 py-4 border border-gray-100 flex items-center gap-4 z-10">
+                        <div className="flex -space-x-3">
+                            {[11, 12, 13, 14, 15].map(i => (
+                                <img key={i} src={`https://i.pravatar.cc/80?img=${i}`} alt="Team" className="w-10 h-10 rounded-full border-2 border-white" />
+                            ))}
+                        </div>
+                        <div>
+                            <p className="text-sm font-black text-gray-900">30+ Team Members</p>
+                            <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Across 4 Countries</p>
+                        </div>
+                    </div>
                 </div>
 
                 {/* ═══ SECTION 2: CULTURE HIGHLIGHTS ═══ */}
@@ -161,8 +233,8 @@ export const Careers: React.FC = () => {
                                 key={dept}
                                 onClick={() => setActiveDept(dept)}
                                 className={`px-5 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 ${activeDept === dept
-                                        ? 'bg-gray-900 text-white shadow-lg'
-                                        : 'bg-gray-50 text-gray-500 border border-gray-200 hover:border-gray-300 hover:text-gray-900'
+                                    ? 'bg-gray-900 text-white shadow-lg'
+                                    : 'bg-gray-50 text-gray-500 border border-gray-200 hover:border-gray-300 hover:text-gray-900'
                                     }`}
                             >
                                 {dept}
