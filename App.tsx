@@ -9,6 +9,7 @@ import { TrustedBy } from './components/TrustedBy';
 import { Testimonial } from './components/Testimonial';
 import { CaseStudies } from './components/CaseStudies';
 import { CTA } from './components/CTA';
+import { Careers } from './components/Careers';
 import { Footer } from './components/Footer';
 
 // Declare AOS to avoid TS errors
@@ -43,6 +44,7 @@ function App() {
         <Testimonial />
         <CaseStudies />
         <Blog />
+        <Careers />
         <CTA />
       </main>
       <Footer />

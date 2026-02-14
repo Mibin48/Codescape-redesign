@@ -32,7 +32,7 @@ export const Navbar: React.FC = () => {
             {/* Desktop Navigation */}
             <div className="hidden md:block ml-auto">
               <div className="flex items-baseline space-x-6">
-                {['Home', 'Services', 'About', 'Projects', 'Blog', 'Contact'].map((item) => (
+                {['Home', 'Services', 'About', 'Projects', 'Blog', 'Careers', 'Contact'].map((item) => (
                   <a
                     key={item}
                     className="text-gray-800 hover:text-primary px-4 py-2 rounded-lg text-base font-bold tracking-wide transition-all hover:bg-primary/5"
@@ -65,7 +65,7 @@ export const Navbar: React.FC = () => {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="p-8 space-y-6 mt-24">
-              {['Home', 'Services', 'About', 'Projects', 'Blog', 'Contact'].map((item, i) => (
+              {['Home', 'Services', 'About', 'Projects', 'Blog', 'Careers', 'Contact'].map((item, i) => (
                 <a
                   key={item}
                   className="block text-gray-900 hover:text-primary px-4 py-3 border-b border-gray-100 rounded-lg text-lg font-bold transition-all hover:bg-primary/5 animate-fade-in-down"
