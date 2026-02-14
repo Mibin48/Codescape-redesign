@@ -4,6 +4,7 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Values } from './components/Values';
 import { Expertise } from './components/Expertise';
+import { Blog } from './components/Blog';
 import { TrustedBy } from './components/TrustedBy';
 import { Testimonial } from './components/Testimonial';
 import { CaseStudies } from './components/CaseStudies';
@@ -32,7 +33,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background-light overflow-x-hidden">
+    <div className="min-h-screen bg-background-light">
       <Navbar />
       <main>
         <Hero />
@@ -41,6 +42,7 @@ function App() {
         <TrustedBy />
         <Testimonial />
         <CaseStudies />
+        <Blog />
         <CTA />
       </main>
       <Footer />

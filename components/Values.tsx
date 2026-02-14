@@ -1,80 +1,114 @@
-
 import React from 'react';
 
 const values = [
   {
-    icon: 'emoji_objects',
+    num: '01',
     title: 'Innovation First',
-    desc: "We don't just follow trends; we set them. Our team constantly explores cutting-edge technologies to give you a competitive advantage in the digital landscape."
+    desc: "We don't just follow trends; we set them. Our team constantly explores cutting-edge technologies.",
+    icon: 'bolt'
   },
   {
-    icon: 'terminal',
+    num: '02',
     title: 'Technical Excellence',
-    desc: "Clean code, robust architecture, and scalable solutions. We build software that stands the test of time, traffic, and evolving business needs."
+    desc: "Clean code, robust architecture, and scalable solutions. We build software that stands the test of time.",
+    icon: 'terminal'
   },
   {
-    icon: 'shield',
+    num: '03',
     title: 'Quality & Trust',
-    desc: "Transparency in process and rigor in testing. We deliver what we promise, on time and with impeccable quality that exceeds expectations."
+    desc: "Transparency in process and rigor in testing. We deliver what we promise with impeccable quality.",
+    icon: 'verified_user'
+  },
+  {
+    num: '04',
+    title: 'Global Impact',
+    desc: "Our solutions are engineered to scale worldwide, impacting millions across different continents.",
+    icon: 'language'
   }
 ];
 
 export const Values: React.FC = () => {
   return (
-    <section className="py-24 bg-background-off relative overflow-hidden" id="about">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-grid-minimal opacity-30"></div>
+    <section className="bg-gray-950 relative" id="about">
+      <div className="flex flex-col lg:flex-row">
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20" data-aos="fade-up">
-          <h2 className="text-sm text-primary font-bold tracking-wider uppercase mb-3 inline-block px-4 py-1.5 bg-primary/5 rounded-full">
-            Our Core Values
-          </h2>
-          <p className="text-4xl md:text-5xl font-bold tracking-tight text-text-main mb-4">
-            Why Choose <span className="gradient-text">CODESCAPE</span>
-          </p>
-          <div className="w-24 h-1 bg-gradient-primary mx-auto mb-6 rounded-full"></div>
-          <p className="max-w-2xl text-lg md:text-xl text-text-muted mx-auto leading-relaxed">
-            Your success is our mission. We deliver excellence through transparency, technical rigor, and thoughtful innovation.
-          </p>
+        {/* Left Side: Sticky — stays pinned while right side scrolls */}
+        <div className="lg:w-1/2 lg:h-screen lg:sticky lg:top-0 flex flex-col justify-center p-12 lg:p-24 relative overflow-hidden bg-gray-950 border-r border-white/5 z-20">
+          <div className="absolute inset-0">
+            <img
+              src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop"
+              alt="Engineering"
+              className="w-full h-full object-cover grayscale opacity-20"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950/98 to-transparent"></div>
+          </div>
+
+          <div className="relative z-10">
+            <span className="text-primary font-black tracking-[0.5em] uppercase text-[11px] mb-8 block opacity-60">Success Criteria</span>
+            <h2 className="text-6xl md:text-[6rem] lg:text-[7rem] font-black text-white leading-[0.9] tracking-tighter mb-10 italic uppercase">
+              WHY<br />CHOOSE<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-500 not-italic">CODESCAPE</span>
+            </h2>
+
+            <div className="mt-8 flex items-center gap-4 opacity-50">
+              <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></span>
+              <span className="text-[10px] font-black text-white/50 tracking-[0.3em] uppercase">Scroll to explore</span>
+            </div>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Right Side: Vertically scrolling stacking cards */}
+        {/* Each card is h-screen and sticky, so it covers the previous one as you scroll */}
+        <div className="lg:w-1/2">
           {values.map((v, i) => (
             <div
               key={i}
-              className="group card-hover bg-white p-8 rounded-2xl border border-gray-100 shadow-card cursor-pointer"
-              data-aos="fade-up"
-              data-aos-delay={i * 100}
+              className="h-screen sticky top-0"
+              style={{ zIndex: i + 1 }}
             >
-              {/* Icon Container */}
-              <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-button">
-                <span className="material-icons text-white text-3xl group-hover:scale-110 transition-transform">
-                  {v.icon}
-                </span>
-              </div>
+              <div
+                className={`w-full h-full flex flex-col justify-center p-12 lg:p-24 relative overflow-hidden
+                  ${i % 2 === 0 ? 'bg-[#0A0D1A]' : 'bg-[#0F121F]'}
+                `}
+                style={{
+                  boxShadow: '0 -30px 60px -10px rgba(0,0,0,0.7)'
+                }}
+              >
+                {/* Massive Background Number */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[35rem] font-black text-white/[0.015] select-none pointer-events-none">
+                  {v.num}
+                </div>
 
-              {/* Title with Decorative Underline */}
-              <h3 className="text-2xl font-bold text-text-main mb-2 group-hover:text-primary transition-colors">
-                {v.title}
-              </h3>
-              <div className="w-12 h-0.5 bg-gradient-primary mb-4 group-hover:w-20 transition-all duration-300"></div>
+                <div className="relative z-10 space-y-12 uppercase">
+                  <div className="text-8xl lg:text-[12rem] font-black tracking-tighter leading-none flex items-center justify-between text-white/5">
+                    {v.num}
+                    <div className="h-px flex-grow max-w-[150px] bg-white/5 hidden md:block"></div>
+                  </div>
 
-              {/* Description */}
-              <p className="text-text-muted leading-relaxed text-base">
-                {v.desc}
-              </p>
+                  <div className="max-w-xl">
+                    <h3 className="text-5xl lg:text-8xl font-black text-white tracking-tighter mb-8 leading-[0.85] italic">
+                      {v.title}
+                    </h3>
+                    <p className="text-gray-400 text-xl lg:text-2xl font-medium normal-case leading-relaxed max-w-sm border-l-2 border-primary/50 pl-8">
+                      {v.desc}
+                    </p>
+                  </div>
 
-              {/* Learn More Link (appears on hover) */}
-              <div className="mt-6 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                <span className="inline-flex items-center text-primary font-semibold text-sm gap-1">
-                  Learn more
-                  <span className="material-icons text-sm">arrow_forward</span>
-                </span>
+                  <div className="mt-auto">
+                    <button className="w-20 h-20 rounded-[28px] bg-white flex items-center justify-center hover:bg-primary transition-all duration-300 group/btn shadow-lg">
+                      <span className="material-icons text-gray-900 group-hover/btn:text-white group-hover/btn:rotate-180 transition-transform duration-500 text-3xl">add</span>
+                    </button>
+                  </div>
+
+                  <div className="absolute bottom-12 right-12 opacity-5">
+                    <span className="material-icons text-white text-[8rem] select-none">{v.icon}</span>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
