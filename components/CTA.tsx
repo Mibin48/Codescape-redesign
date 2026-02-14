@@ -25,7 +25,7 @@ export const CTA: React.FC = () => {
               className="group w-full sm:w-auto px-10 py-5 bg-white text-primary rounded-xl font-bold text-base sm:text-lg shadow-button-hover hover:shadow-glow-lg hover:scale-105 transition-all duration-300 inline-flex items-center justify-center gap-2"
               href="#contact"
             >
-              <span>🚀 Start Your Project</span>
+              <span>Start Your Project</span>
               <span className="material-icons transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
             </a>
             <a
