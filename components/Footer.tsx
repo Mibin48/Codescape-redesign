@@ -14,9 +14,7 @@ export const Footer: React.FC = () => {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-8 group cursor-pointer">
-              <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center text-white font-bold text-xl shadow-button group-hover:scale-110 transition-transform duration-300">
-                C
-              </div>
+              <img src="/no-bg-icon.png" alt="CODESCAPE Logo" className="w-14 h-14 object-contain group-hover:scale-110 transition-transform duration-300" />
               <span className="text-2xl font-bold text-white tracking-tight">
                 CODE<span className="gradient-text">SCAPE</span>
               </span>
