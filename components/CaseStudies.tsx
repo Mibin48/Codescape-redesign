@@ -67,11 +67,11 @@ export const CaseStudies: React.FC = () => {
 
       <div className="max-w-[1600px] mx-auto relative z-10 px-4">
         <div className="text-center mb-24" data-aos="fade-up">
-          <span className="text-primary font-black uppercase tracking-[0.4em] text-[11px] mb-4 block">Our Portfolio</span>
+          <span className="text-primary font-black uppercase tracking-[0.4em] text-[11px] mb-4 block">Our Work</span>
           <h2 className="text-6xl md:text-7xl font-black text-gray-950 tracking-tighter mb-6">
-            Engineering <span className="gradient-text">Excellence</span>
+            Real Stories, <span className="gradient-text">Real Impact</span>
           </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto font-medium text-lg">A curated showcase of our most impactful digital transformations.</p>
+          <p className="text-gray-500 max-w-2xl mx-auto font-medium text-lg">See how we've helped founders and teams bring their biggest ideas to life.</p>
         </div>
 
         {/* Overlapping Horizontal Carousel */}

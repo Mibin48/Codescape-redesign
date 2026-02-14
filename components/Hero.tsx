@@ -26,18 +26,18 @@ export const Hero: React.FC = () => {
 
                     {/* Top Badges */}
                     <div className="flex flex-wrap gap-4 mb-20" data-aos="fade-right">
-                        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-50 border border-orange-100 text-[13px] font-medium text-orange-700">
-                            <span className="w-5 h-5 flex items-center justify-center bg-orange-500 rounded text-white text-[10px] font-bold">C</span>
+                        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-50 border border-orange-100 text-[15px] font-medium text-orange-700">
+                            <span className="w-5 h-5 flex items-center justify-center bg-orange-500 rounded text-white text-[12px] font-bold">S</span>
                             Top-Tier Innovation Agency
                         </div>
-                        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-[13px] font-medium text-blue-700">
-                            <span className="text-yellow-500 font-bold">G</span>
+                        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-[14px] font-medium text-blue-700">
+                            <span className="text-yellow-500 font-bold">Google</span>
                             <span className="flex text-yellow-500 text-[10px]">★★★★★</span>
-                            4.9/5 Rating
+                            4.9/5
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-48 items-start">
 
                         {/* Left Column: Headline & Stats */}
                         <div className="space-y-24">
@@ -45,19 +45,19 @@ export const Hero: React.FC = () => {
                                 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-950 leading-[1.1] tracking-[-0.02em]"
                                 data-aos="fade-up"
                             >
-                                All your digital <br />
-                                <span className="text-gray-400">products</span> done <br />
-                                with <span className="gradient-text">precision</span>
+                                Building digital products <br />
+                                <span className="text-gray-400">people</span> actually <br />
+                                <span className="gradient-text">love using</span>
                             </h1>
 
                             <div className="flex flex-wrap gap-10 md:gap-16" data-aos="fade-up" data-aos-delay="200">
                                 <div>
                                     <div className="text-4xl font-bold text-gray-900 mb-1">100+</div>
-                                    <div className="text-sm text-gray-500 font-medium uppercase tracking-wider">Completed projects</div>
+                                    <div className="text-sm text-gray-500 font-medium uppercase tracking-wider">Dream projects launched</div>
                                 </div>
                                 <div>
                                     <div className="text-4xl font-bold text-gray-900 mb-1">98%</div>
-                                    <div className="text-sm text-gray-500 font-medium uppercase tracking-wider">Client satisfaction</div>
+                                    <div className="text-sm text-gray-500 font-medium uppercase tracking-wider">Happy founders</div>
                                 </div>
                             </div>
                         </div>
@@ -69,7 +69,7 @@ export const Hero: React.FC = () => {
                                 data-aos="fade-left"
                                 data-aos-delay="100"
                             >
-                                Stop searching for pro designers and developers. Start getting your engineering done. Match with top-tier talent and get your projects delivered.
+                                Forget the typical agency run-around. We're a passionate team of designers and engineers who care as much about your vision as you do. Let's build something you're proud of.
                             </p>
 
                             {/* Email Input CTA */}

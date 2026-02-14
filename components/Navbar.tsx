@@ -30,7 +30,7 @@ export const Navbar: React.FC = () => {
             </a>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:block ml-auto">
+            <div className="hidden md:flex items-center gap-6 ml-auto">
               <div className="flex items-baseline space-x-6">
                 {['Home', 'Services', 'About', 'Projects', 'Blog', 'Careers', 'Contact'].map((item) => (
                   <a
@@ -42,6 +42,13 @@ export const Navbar: React.FC = () => {
                   </a>
                 ))}
               </div>
+              <a
+                href="#demo"
+                className="bg-gray-950 hover:bg-primary text-white px-6 py-2.5 rounded-xl font-bold text-sm transition-all active:scale-95 shadow-lg flex items-center gap-2 group"
+              >
+                Try Demo
+                <span className="material-icons text-xs group-hover:translate-x-0.5 transition-transform">bolt</span>
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -76,6 +83,15 @@ export const Navbar: React.FC = () => {
                   {item}
                 </a>
               ))}
+              <div className="pt-4">
+                <a
+                  href="#demo"
+                  className="w-full bg-primary text-white px-6 py-4 rounded-2xl font-black text-center text-lg shadow-xl shadow-primary/20 block active:scale-95 transition-all"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Try Demo
+                </a>
+              </div>
             </div>
           </div>
         </div>

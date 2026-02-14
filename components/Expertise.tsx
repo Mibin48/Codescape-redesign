@@ -4,8 +4,8 @@ import React from 'react';
 const services = [
   {
     icon: 'language',
-    title: 'Web Development',
-    desc: 'High-performance websites and web applications built with modern frameworks and best practices.',
+    title: 'Websites that Work',
+    desc: 'We build fast, friendly websites that look great on any screen and feel even better to use.',
     tech: ['React', 'Next.js', 'Node.js'],
     projects: 45,
     color: 'from-blue-500 to-cyan-400',
@@ -13,8 +13,8 @@ const services = [
   },
   {
     icon: 'smartphone',
-    title: 'Mobile Apps',
-    desc: 'Native and cross-platform mobile experiences that users love on iOS and Android.',
+    title: 'Mobile Experiences',
+    desc: "Apps that people actually want to keep on their phones. Smooth, intuitive, and built for real life.",
     tech: ['React Native', 'Flutter', 'Swift'],
     projects: 28,
     color: 'from-violet-500 to-purple-400',
@@ -22,8 +22,8 @@ const services = [
   },
   {
     icon: 'cloud_queue',
-    title: 'Cloud Solutions',
-    desc: 'Scalable cloud infrastructure, migration, and serverless architecture for modern apps.',
+    title: 'Modern Infrastructure',
+    desc: "Setting up a solid foundation for your app to grow, so you can focus on your users without the headaches.",
     tech: ['AWS', 'Azure', 'Docker'],
     projects: 32,
     color: 'from-emerald-500 to-teal-400',
@@ -31,8 +31,8 @@ const services = [
   },
   {
     icon: 'palette',
-    title: 'UI/UX Design',
-    desc: 'User-centric design that creates intuitive and beautiful digital products.',
+    title: 'Human Design',
+    desc: "We design experiences that feel natural, not frustrating. Beautiful interfaces that just make sense.",
     tech: ['Figma', 'Adobe XD', 'Sketch'],
     projects: 52,
     color: 'from-amber-500 to-orange-400',
@@ -54,14 +54,14 @@ export const Expertise: React.FC = () => {
         <div className="text-center mb-20" data-aos="fade-up">
           <span className="inline-flex items-center gap-2 text-primary font-bold tracking-wider uppercase text-xs mb-6 px-5 py-2 rounded-full border border-primary/20 bg-primary/5">
             <span className="material-icons text-sm">auto_awesome</span>
-            What We Do
+            What we're good at
           </span>
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 tracking-tight mb-6 leading-[0.95]">
-            Engineering<br />
-            <span className="gradient-text">Excellence</span>
+            Crafting Digital<br />
+            <span className="gradient-text">Experiences</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
-            We transform complex challenges into elegant, scalable digital solutions that drive measurable business impact.
+            We don't just build software. We create digital tools that solve real problems and make people's lives just a little bit easier.
           </p>
         </div>
 

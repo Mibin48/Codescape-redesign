@@ -4,29 +4,29 @@ import React, { useState } from 'react';
 const values = [
   {
     num: '01',
-    title: 'Innovation First',
-    desc: "We don't just follow trends; we set them. Our team constantly explores cutting-edge technologies.",
+    title: 'Stay Curious',
+    desc: "We don't just follow trends; we ask 'what if?'. Our team is driven by a restless curiosity to find better ways to solve your problems.",
     icon: 'bolt',
     image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1200&auto=format&fit=crop'
   },
   {
     num: '02',
-    title: 'Technical Excellence',
-    desc: "Clean code, robust architecture, and scalable solutions. We build software that stands the test of time.",
+    title: 'Built to Last',
+    desc: "We believe in craftsmanship. We write clean, thoughtful code and design robust architectures that grow with you, not against you.",
     icon: 'terminal',
     image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop'
   },
   {
     num: '03',
-    title: 'Quality & Trust',
-    desc: "Transparency in process and rigor in testing. We deliver what we promise with impeccable quality.",
+    title: 'People First',
+    desc: "Software is built by people, for people. We value honest communication, mutual trust, and making the journey as enjoyable as the destination.",
     icon: 'verified_user',
     image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop'
   },
   {
     num: '04',
-    title: 'Global Impact',
-    desc: "Our solutions are engineered to scale worldwide, impacting millions across different continents.",
+    title: 'Real Impact',
+    desc: "We're not here to just check boxes. We're here to build tools that actually make a difference in people's lives, all around the world.",
     icon: 'language',
     image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop'
   }

@@ -46,13 +46,13 @@ export const CTA: React.FC = () => {
           {/* Headline */}
           <div className="text-center" data-aos="zoom-in" data-aos-duration="1000">
             <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white leading-[0.95] tracking-tight mb-8">
-              Let's Build<br />
+              Ready to build your<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent-500 to-primary bg-[length:200%_auto] animate-gradient-shift">
-                Something Epic
+                next big idea?
               </span>
             </h2>
             <p className="text-lg md:text-xl text-white/50 max-w-2xl mx-auto leading-relaxed mb-14 font-medium">
-              Partner with an engineering team that turns ambitious ideas into scalable, production-ready products.
+              We're here to help you turn that spark of an idea into a real, living product that people will love. No jargon, just great engineering.
             </p>
           </div>
 
@@ -66,6 +66,13 @@ export const CTA: React.FC = () => {
               <span className="w-8 h-8 rounded-lg bg-gray-900 flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
                 <span className="material-icons text-white text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
               </span>
+            </a>
+            <a
+              className="group w-full sm:w-auto px-10 py-5 border border-white/30 text-white bg-primary rounded-2xl font-black text-base sm:text-lg hover:bg-primary/90 hover:shadow-[0_20px_60px_rgba(59,130,246,0.3)] hover:scale-[1.03] transition-all duration-300 inline-flex items-center justify-center gap-3 shadow-lg shadow-primary/20"
+              href="#demo"
+            >
+              <span className="material-icons text-white animate-pulse">play_circle</span>
+              Try Demo
             </a>
             <a
               className="group w-full sm:w-auto px-10 py-5 border border-white/15 text-white bg-white/5 backdrop-blur-sm rounded-2xl font-bold text-base sm:text-lg hover:bg-white/10 hover:border-white/30 transition-all duration-300 inline-flex items-center justify-center gap-3"
