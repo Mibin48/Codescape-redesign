@@ -23,7 +23,7 @@ export const Footer: React.FC = () => {
                 CODE<span className="gradient-text">SCAPE</span>
               </span>
             </div>
-            <p className="text-gray-400 text-base leading-relaxed mb-8 max-w-sm">
+            <p className="text-gray-400 text-lg leading-relaxed mb-8 max-w-sm">
               Empowering businesses through innovative technology and creative design solutions. Where <span className="text-white font-medium">Creativity Meets Technology</span>.
             </p>
             <div className="flex space-x-3">
@@ -77,14 +77,13 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Services Column */}
           <div className="lg:col-span-2">
-            <h4 className="text-white font-bold mb-8 uppercase text-xs tracking-[0.2em]">Our Services</h4>
+            <h4 className="text-white font-bold mb-8 uppercase text-sm tracking-[0.2em]">Our Services</h4>
             <ul className="space-y-4">
               {['Web Development', 'Mobile Applications', 'Cloud Solutions', 'UI/UX Design', 'AI/ML Integration'].map(item => (
                 <li key={item}>
-                  <a className="text-gray-400 hover:text-primary transition-all duration-300 text-sm flex items-center gap-2 group" href="#">
-                    <span className="w-1 h-1 rounded-full bg-primary/40 group-hover:w-2 transition-all"></span>
+                  <a className="text-gray-400 hover:text-primary transition-all duration-300 text-base flex items-center gap-2 group" href="#">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary/40 group-hover:w-2.5 transition-all"></span>
                     {item}
                   </a>
                 </li>
@@ -92,14 +91,13 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Quick Links Column */}
           <div className="lg:col-span-2">
-            <h4 className="text-white font-bold mb-8 uppercase text-xs tracking-[0.2em]">Quick Links</h4>
+            <h4 className="text-white font-bold mb-8 uppercase text-sm tracking-[0.2em]">Quick Links</h4>
             <ul className="space-y-4">
               {['About Us', 'Latest Projects', 'Career Openings', 'Tech Blog', 'Privacy & Terms'].map(item => (
                 <li key={item}>
-                  <a className="text-gray-400 hover:text-primary transition-all duration-300 text-sm flex items-center gap-2 group" href="#">
-                    <span className="w-1 h-1 rounded-full bg-primary/40 group-hover:w-2 transition-all"></span>
+                  <a className="text-gray-400 hover:text-primary transition-all duration-300 text-base flex items-center gap-2 group" href="#">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary/40 group-hover:w-2.5 transition-all"></span>
                     {item}
                   </a>
                 </li>
@@ -107,19 +105,18 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Contact & Newsletter Column */}
           <div className="lg:col-span-4">
-            <h4 className="text-white font-bold mb-8 uppercase text-xs tracking-[0.2em]">Get In Touch</h4>
+            <h4 className="text-white font-bold mb-8 uppercase text-sm tracking-[0.2em]">Get In Touch</h4>
 
             {/* Contact Info */}
-            <div className="space-y-5 mb-10">
+            <div className="space-y-6 mb-10">
               <div className="flex items-start gap-4">
                 <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0">
                   <span className="material-icons text-primary text-lg">location_on</span>
                 </div>
                 <div>
-                  <p className="text-white text-sm font-semibold mb-0.5">Our Office</p>
-                  <p className="text-gray-400 text-sm">Muvattupuzha, Kerala, India - 686661</p>
+                  <p className="text-white text-base font-semibold mb-0.5">Our Office</p>
+                  <p className="text-gray-400 text-base">Muvattupuzha, Kerala, India - 686661</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -127,8 +124,8 @@ export const Footer: React.FC = () => {
                   <span className="material-icons text-primary text-lg">email</span>
                 </div>
                 <div>
-                  <p className="text-white text-sm font-semibold mb-0.5">Email Us</p>
-                  <a href="mailto:contact@thecodescape.in" className="text-gray-400 text-sm hover:text-primary transition-colors">contact@thecodescape.in</a>
+                  <p className="text-white text-base font-semibold mb-0.5">Email Us</p>
+                  <a href="mailto:contact@thecodescape.in" className="text-gray-400 text-base hover:text-primary transition-colors">contact@thecodescape.in</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -136,8 +133,8 @@ export const Footer: React.FC = () => {
                   <span className="material-icons text-primary text-lg">call</span>
                 </div>
                 <div>
-                  <p className="text-white text-sm font-semibold mb-0.5">Call Us</p>
-                  <a href="tel:+918921258262" className="text-gray-400 text-2xl font-black hover:text-primary transition-colors tracking-tight">
+                  <p className="text-white text-base font-semibold mb-0.5">Call Us</p>
+                  <a href="tel:+918921258262" className="text-gray-400 text-3xl font-black hover:text-primary transition-colors tracking-tight">
                     +91 892 125 8262
                   </a>
                 </div>
@@ -146,10 +143,10 @@ export const Footer: React.FC = () => {
 
             {/* Newsletter */}
             <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/5">
-              <p className="text-white text-sm font-bold mb-3">Subscribe to our newsletter</p>
+              <p className="text-white text-base font-bold mb-3">Subscribe to our newsletter</p>
               <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
                 <input
-                  className="flex-1 bg-white/5 border border-white/10 text-white text-sm rounded-xl focus:ring-primary focus:border-primary block p-3.5 placeholder-gray-500 focus:outline-none focus:bg-white/10 transition-all"
+                  className="flex-1 bg-white/5 border border-white/10 text-white text-base rounded-xl focus:ring-primary focus:border-primary block p-3.5 placeholder-gray-500 focus:outline-none focus:bg-white/10 transition-all"
                   placeholder="your@email.com"
                   type="email"
                 />
@@ -167,8 +164,8 @@ export const Footer: React.FC = () => {
 
       {/* Full-Width Bottom Bar */}
       <div className="w-full border-t border-white/5 bg-black/20">
-        <div className="max-w-7xl mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-gray-500 text-xs text-center md:text-left">
+        <div className="max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="text-gray-500 text-sm text-center md:text-left leading-relaxed">
             © {new Date().getFullYear()} <span className="text-gray-400 font-semibold tracking-wide">CODESCAPE</span>. All rights reserved.
             <span className="hidden md:inline mx-3 opacity-30">|</span>
             <br className="md:hidden" />
@@ -176,7 +173,7 @@ export const Footer: React.FC = () => {
           </div>
           <div className="flex gap-8">
             {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map(item => (
-              <a key={item} className="text-gray-500 hover:text-white text-xs transition-colors" href="#">{item}</a>
+              <a key={item} className="text-gray-500 hover:text-white text-sm transition-colors font-medium" href="#">{item}</a>
             ))}
           </div>
         </div>

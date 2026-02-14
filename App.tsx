@@ -34,9 +34,9 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background-light">
+    <div className="min-h-screen bg-background-light overflow-x-hidden">
       <Navbar />
-      <main>
+      <main className="relative">
         <Hero />
         <Values />
         <Expertise />

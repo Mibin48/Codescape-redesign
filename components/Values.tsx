@@ -44,11 +44,11 @@ export const Values = () => {
   };
 
   return (
-    <section className="h-screen bg-gray-950 relative overflow-hidden" id="about">
-      <div className="flex flex-col lg:flex-row h-full">
+    <section className="min-h-screen lg:h-screen bg-gray-950 relative overflow-hidden" id="about">
+      <div className="flex flex-col lg:flex-row min-h-screen lg:h-full">
 
-        {/* Left Side: Fixed Content */}
-        <div className="lg:w-1/2 h-full flex flex-col justify-center p-8 sm:p-12 lg:p-16 xl:p-24 relative overflow-hidden bg-gray-950 lg:border-r border-white/5 z-20">
+        {/* Left Side: Content */}
+        <div className="lg:w-1/2 min-h-[50vh] lg:h-full flex flex-col justify-center p-6 sm:p-12 lg:p-16 xl:p-24 relative overflow-hidden bg-gray-950 lg:border-r border-white/5 z-20">
 
           {/* Background Image — changes with active card */}
           <div className="absolute inset-0 z-0 transition-opacity duration-700">
@@ -70,7 +70,7 @@ export const Values = () => {
               Success Criteria
             </span>
 
-            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[7rem] font-black text-white leading-[0.9] tracking-tighter mb-8 sm:mb-10">
+            <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[7rem] font-black text-white leading-[0.9] tracking-tighter mb-8 sm:mb-10">
               <span className="block italic uppercase">WHY</span>
               <span className="block italic uppercase">CHOOSE</span>
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400">
@@ -95,7 +95,7 @@ export const Values = () => {
         </div>
 
         {/* Right Side: Cards Traverse with Buttons */}
-        <div className="lg:w-1/2 relative h-full bg-gray-950">
+        <div className="lg:w-1/2 relative min-h-[50vh] lg:h-full bg-gray-950">
           {values.map((v, i) => (
             <div
               key={i}
@@ -104,7 +104,7 @@ export const Values = () => {
                 : 'opacity-0 translate-x-12 z-0'
                 }`}
             >
-              <div className={`w-full h-full flex flex-col justify-center p-8 sm:p-12 lg:p-16 xl:p-24 relative overflow-hidden ${i % 2 === 0 ? 'bg-[#0A0D1A]' : 'bg-[#0F121F]'
+              <div className={`w-full h-full flex flex-col justify-center p-6 sm:p-12 lg:p-16 xl:p-24 relative overflow-hidden ${i % 2 === 0 ? 'bg-[#0A0D1A]' : 'bg-[#0F121F]'
                 }`}>
 
                 {/* Background image for right panel */}
@@ -118,21 +118,21 @@ export const Values = () => {
                 </div>
 
                 {/* Massive Background Number */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20rem] sm:text-[25rem] md:text-[30rem] lg:text-[35rem] font-black text-white/[0.015] select-none pointer-events-none leading-none">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[12rem] sm:text-[25rem] md:text-[30rem] lg:text-[35rem] font-black text-white/[0.015] select-none pointer-events-none leading-none">
                   {v.num}
                 </div>
 
-                <div className="relative z-10 space-y-8 sm:space-y-12 uppercase">
-                  <div className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[12rem] font-black tracking-tighter leading-none flex items-center gap-4 sm:gap-8 text-white/5">
+                <div className="relative z-10 space-y-6 sm:space-y-12 uppercase">
+                  <div className="text-4xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[12rem] font-black tracking-tighter leading-none flex items-center gap-4 sm:gap-8 text-white/5">
                     {v.num}
                     <div className="h-px flex-1 max-w-[100px] sm:max-w-[150px] bg-white/5"></div>
                   </div>
 
                   <div className="max-w-xl">
-                    <h3 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white tracking-tighter mb-6 sm:mb-8 leading-[0.85] italic">
+                    <h3 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white tracking-tighter mb-4 sm:mb-8 leading-[0.85] italic">
                       {v.title}
                     </h3>
-                    <p className="text-gray-400 text-lg sm:text-xl lg:text-2xl font-medium normal-case leading-relaxed max-w-sm border-l-2 border-blue-500/50 pl-6 sm:pl-8">
+                    <p className="text-gray-400 text-base sm:text-xl lg:text-2xl font-medium normal-case leading-relaxed max-w-sm border-l-2 border-blue-500/50 pl-4 sm:pl-8">
                       {v.desc}
                     </p>
                   </div>

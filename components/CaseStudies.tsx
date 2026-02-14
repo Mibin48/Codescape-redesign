@@ -75,7 +75,7 @@ export const CaseStudies: React.FC = () => {
         </div>
 
         {/* Overlapping Horizontal Carousel */}
-        <div className="relative h-[650px] flex items-center justify-center perspective-[2000px]">
+        <div className="relative h-[450px] md:h-[650px] flex items-center justify-center perspective-[2000px]">
           {cases.map((c, i) => {
             let diff = i - activeIdx;
 
@@ -84,18 +84,16 @@ export const CaseStudies: React.FC = () => {
             if (diff > cases.length / 2) diff -= cases.length;
 
             const isCurrent = diff === 0;
-            const isPrev = diff === -1;
-            const isNext = diff === 1;
             const isHidden = Math.abs(diff) > 1;
 
             return (
               <div
                 key={i}
-                className={`absolute w-full max-w-5xl transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] ${isHidden ? 'opacity-0 scale-75 pointer-events-none' : 'opacity-100'}`}
+                className={`absolute w-[95%] md:w-full max-w-5xl transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] ${isHidden ? 'opacity-0 scale-75 pointer-events-none' : 'opacity-100'}`}
                 style={{
                   zIndex: isCurrent ? 30 : 10,
                   transform: `
-                    translateX(${diff * 25}%)
+                    translateX(${diff * (window.innerWidth < 768 ? 15 : 25)}%)
                     translateZ(${isCurrent ? '0' : '-150px'})
                     rotateY(${diff * -15}deg)
                     scale(${isCurrent ? 1 : 0.85})
@@ -104,49 +102,41 @@ export const CaseStudies: React.FC = () => {
                 }}
               >
                 <div
-                  className={`bg-white rounded-[40px] overflow-hidden border border-gray-100 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] flex flex-col md:flex-row h-[520px] transition-all duration-500 overflow-hidden ${isCurrent ? 'cursor-default ring-1 ring-gray-100' : 'cursor-pointer hover:opacity-100 opacity-60'}`}
+                  className={`bg-white rounded-[30px] md:rounded-[40px] overflow-hidden border border-gray-100 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] flex flex-col md:flex-row h-[420px] md:h-[520px] transition-all duration-500 overflow-hidden ${isCurrent ? 'cursor-default ring-1 ring-gray-100' : 'cursor-pointer hover:opacity-100 opacity-60'}`}
                   onClick={() => !isCurrent && setActiveIdx(i)}
                 >
 
                   {/* Image Side */}
-                  <div className="w-full md:w-[45%] h-56 md:h-full relative overflow-hidden group">
+                  <div className="w-full md:w-[45%] h-32 md:h-full relative overflow-hidden group">
                     <img src={c.img} alt={c.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                     <div className="absolute inset-0 bg-gradient-to-tr from-gray-900/60 to-transparent mix-blend-overlay"></div>
-
-                    {/* Floating Tech Badges */}
-                    <div className="absolute bottom-6 left-6 flex flex-wrap gap-2">
-                      {c.tags.slice(0, 2).map(tag => (
-                        <span key={tag} className="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[9px] font-black text-white uppercase tracking-widest border border-white/20">{tag}</span>
-                      ))}
-                    </div>
                   </div>
 
                   {/* Content Side */}
-                  <div className="w-full md:w-[55%] p-12 flex flex-col bg-white">
-                    <div className="flex justify-between items-start mb-8">
-                      <span className="text-[11px] font-black uppercase tracking-[0.3em] text-primary">{c.category}</span>
-                      <span className="material-icons text-gray-100 text-5xl select-none">watermark</span>
+                  <div className="w-full md:w-[55%] p-6 md:p-12 flex flex-col bg-white overflow-hidden">
+                    <div className="flex justify-between items-start mb-4 md:mb-8">
+                      <span className="text-[10px] md:text-[11px] font-black uppercase tracking-[0.3em] text-primary">{c.category}</span>
                     </div>
 
-                    <h3 className="text-4xl font-extrabold text-gray-950 mb-6 leading-[1.1] tracking-tight">{c.title}</h3>
-                    <p className="text-gray-500 font-medium leading-relaxed mb-10 flex-grow text-lg">{c.desc}</p>
+                    <h3 className="text-2xl md:text-4xl font-extrabold text-gray-950 mb-3 md:mb-6 leading-[1.1] tracking-tight">{c.title}</h3>
+                    <p className="text-gray-500 font-medium leading-relaxed mb-4 md:mb-10 flex-grow text-sm md:text-lg line-clamp-2 md:line-clamp-none">{c.desc}</p>
 
                     {/* Premium Metrics Grid */}
-                    <div className="grid grid-cols-3 gap-6 mb-10 pt-10 border-t border-gray-50">
+                    <div className="grid grid-cols-3 gap-3 md:gap-6 mb-6 md:mb-10 pt-4 md:pt-10 border-t border-gray-50">
                       {c.metrics.map((m, idx) => (
-                        <div key={idx} className="space-y-1">
-                          <div className="text-2xl font-black text-gray-950 tracking-tighter">{m.value}</div>
-                          <div className="text-[10px] font-bold text-gray-400 uppercase tracking-tighter leading-tight">{m.label}</div>
+                        <div key={idx} className="space-y-0.5">
+                          <div className="text-lg md:text-2xl font-black text-gray-950 tracking-tighter">{m.value}</div>
+                          <div className="text-[9px] md:text-[10px] font-bold text-gray-400 uppercase tracking-tighter leading-tight">{m.label}</div>
                         </div>
                       ))}
                     </div>
 
-                    <div className="flex items-center gap-6 group/link cursor-pointer">
-                      <span className="text-[11px] font-black tracking-[0.2em] text-gray-950 group-hover/link:text-primary transition-colors">EXPLORE CASE STUDY</span>
-                      <div className="h-px flex-grow bg-gray-100 relative overflow-hidden">
+                    <div className="flex items-center gap-4 group/link cursor-pointer">
+                      <span className="text-[10px] md:text-[11px] font-black tracking-[0.2em] text-gray-950">EXPLORE</span>
+                      <div className="h-px flex-grow bg-gray-100 relative overflow-hidden hidden md:block">
                         <div className="absolute inset-0 bg-primary -translate-x-full group-hover/link:translate-x-0 transition-transform duration-500"></div>
                       </div>
-                      <span className="material-icons text-xl group-hover/link:translate-x-2 transition-transform duration-300">arrow_forward</span>
+                      <span className="material-icons text-lg group-hover/link:translate-x-2 transition-transform duration-300">arrow_forward</span>
                     </div>
                   </div>
                 </div>
@@ -178,7 +168,7 @@ export const CaseStudies: React.FC = () => {
 
         {/* ═══ PROCESS VIDEO SHOWCASE ═══ */}
         <div className="mt-24 rounded-3xl overflow-hidden relative group" data-aos="fade-up">
-          <div className="relative aspect-[21/9] bg-gray-950">
+          <div className="relative aspect-[3/4] md:aspect-[21/9] bg-gray-950">
             <video
               autoPlay
               muted
@@ -189,28 +179,28 @@ export const CaseStudies: React.FC = () => {
             >
               <source src="https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-his-laptop-34440-large.mp4" type="video/mp4" />
             </video>
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-950/90 via-gray-950/40 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-gray-950/90 via-gray-950/40 to-transparent"></div>
 
             {/* Overlay Content */}
-            <div className="absolute inset-0 flex items-center p-12 lg:p-20">
+            <div className="absolute inset-0 flex items-center p-8 md:p-12 lg:p-20">
               <div className="max-w-lg">
-                <span className="text-primary text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">Our Process</span>
+                <span className="text-primary text-[10px] md:text-[11px] font-black uppercase tracking-[0.4em] mb-4 block">Our Process</span>
                 <h3 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight leading-[0.95]">
                   From Concept to<br />Production
                 </h3>
-                <p className="text-white/50 text-sm md:text-base font-medium leading-relaxed mb-8 max-w-md">
+                <p className="text-white/50 text-sm md:text-base font-medium leading-relaxed mb-8 max-w-sm">
                   Watch how we transform ideas into polished, production-ready digital experiences through our battle-tested engineering process.
                 </p>
-                <button className="inline-flex items-center gap-4 px-8 py-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl text-white font-bold text-sm hover:bg-white/20 transition-all duration-300 group/btn shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
+                <button className="inline-flex items-center gap-4 px-6 md:px-8 py-3 md:py-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl text-white font-bold text-sm hover:bg-white/20 transition-all duration-300 group/btn shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
                   <div className="relative">
                     <div className="absolute inset-0 rounded-full bg-primary/40 animate-ping duration-[2000ms]"></div>
-                    <div className="w-12 h-12 rounded-full bg-white text-gray-950 flex items-center justify-center relative z-10 group-hover/btn:bg-primary group-hover/btn:text-white group-hover/btn:scale-110 group-hover/btn:rotate-[360deg] transition-all duration-700">
-                      <span className="material-icons text-xl ml-0.5">play_arrow</span>
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white text-gray-950 flex items-center justify-center relative z-10 group-hover/btn:bg-primary group-hover/btn:text-white transition-all duration-700">
+                      <span className="material-icons text-lg md:text-xl ml-0.5">play_arrow</span>
                     </div>
                   </div>
                   <div className="text-left">
-                    <div className="text-xs font-black uppercase tracking-[0.2em] opacity-50 mb-0.5">Watch</div>
-                    <div className="text-base">Showreel 2026</div>
+                    <div className="text-[10px] font-black uppercase tracking-[0.2em] opacity-50 mb-0.5">Watch</div>
+                    <div className="text-sm md:text-base">Showreel 2026</div>
                   </div>
                 </button>
               </div>

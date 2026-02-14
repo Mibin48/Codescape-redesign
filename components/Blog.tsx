@@ -182,7 +182,7 @@ export const Blog: React.FC = () => {
 
                 {/* ═══ VIDEO ARTICLE CARD ═══ */}
                 <div className="mt-12 group rounded-3xl overflow-hidden relative cursor-pointer" data-aos="fade-up">
-                    <div className="relative aspect-[21/9]">
+                    <div className="relative aspect-[3/4] md:aspect-[21/9]">
                         <video
                             autoPlay
                             muted
@@ -193,10 +193,10 @@ export const Blog: React.FC = () => {
                         >
                             <source src="https://assets.mixkit.co/videos/preview/mixkit-businesswoman-working-at-her-laptop-in-a-modern-office-4134-large.mp4" type="video/mp4" />
                         </video>
-                        <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/50 to-transparent"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-gray-900/90 via-gray-900/50 to-transparent"></div>
 
                         {/* Video Content */}
-                        <div className="absolute inset-0 flex items-center p-10 lg:p-16">
+                        <div className="absolute inset-0 flex items-end md:items-center p-8 lg:p-16">
                             <div className="max-w-lg">
                                 <div className="flex items-center gap-3 mb-4">
                                     <span className="px-3 py-1 rounded-full bg-red-500/90 text-white text-[10px] font-black tracking-widest uppercase flex items-center gap-1.5">
@@ -208,20 +208,19 @@ export const Blog: React.FC = () => {
                                 <h3 className="text-2xl md:text-3xl font-black text-white leading-tight mb-3 group-hover:text-primary-300 transition-colors">
                                     Tech Talk: Building Real-Time Systems at Scale
                                 </h3>
-                                <p className="text-white/50 text-sm mb-6 max-w-md">
+                                <p className="text-white/50 text-sm mb-6 max-w-md hidden sm:block">
                                     Our CTO discusses the patterns and trade-offs in building systems that handle millions of concurrent connections.
                                 </p>
-                                <div className="flex items-center gap-5 group/play cursor-pointer">
+                                <div className="flex items-center gap-4 group/play cursor-pointer">
                                     <div className="relative">
                                         <div className="absolute inset-0 rounded-full bg-primary/40 animate-ping duration-[3000ms]"></div>
-                                        <div className="absolute -inset-2 rounded-full bg-primary/20 animate-pulse duration-[1500ms]"></div>
-                                        <div className="w-16 h-16 rounded-full bg-white text-gray-950 flex items-center justify-center relative z-10 group-hover:bg-primary group-hover:text-white group-hover:scale-110 group-hover:rotate-[360deg] transition-all duration-700 shadow-xl">
-                                            <span className="material-icons text-2xl ml-1">play_arrow</span>
+                                        <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-white text-gray-950 flex items-center justify-center relative z-10 group-hover:bg-primary group-hover:text-white transition-all duration-700 shadow-xl">
+                                            <span className="material-icons text-xl md:text-2xl ml-1">play_arrow</span>
                                         </div>
                                     </div>
                                     <div className="space-y-0.5">
-                                        <span className="text-white/40 text-[10px] font-black uppercase tracking-widest block">Tutorial</span>
-                                        <span className="text-white font-black text-lg group-hover:text-primary transition-colors">Watch Now</span>
+                                        <span className="text-white/40 text-[9px] font-black uppercase tracking-widest block">Tutorial</span>
+                                        <span className="text-white font-black text-base md:text-lg group-hover:text-primary transition-colors">Watch Now</span>
                                     </div>
                                 </div>
                             </div>

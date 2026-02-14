@@ -137,7 +137,7 @@ export const Expertise: React.FC = () => {
 
         {/* Showreel Video Section */}
         <div className="mt-20 rounded-3xl overflow-hidden relative group" data-aos="fade-up" data-aos-delay="200">
-          <div className="relative aspect-video bg-gray-950">
+          <div className="relative aspect-[4/3] md:aspect-video bg-gray-950">
             <video
               autoPlay
               muted
@@ -151,20 +151,19 @@ export const Expertise: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/30 to-transparent"></div>
 
             {/* Overlay Content */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
-              <div className="relative group/play cursor-pointer mb-8">
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 md:p-8">
+              <div className="relative group/play cursor-pointer mb-6 md:mb-8">
                 {/* Multiple Animated Rings */}
                 <div className="absolute inset-0 rounded-full bg-white/20 animate-ping duration-1000"></div>
-                <div className="absolute -inset-4 rounded-full bg-white/10 animate-pulse duration-1000"></div>
-                <div className="absolute -inset-8 rounded-full bg-white/5 animate-pulse duration-1000 delay-300"></div>
+                <div className="absolute -inset-2 md:-inset-4 rounded-full bg-white/10 animate-pulse duration-1000"></div>
 
                 {/* Actual Button */}
-                <div className="w-24 h-24 rounded-full bg-white text-gray-950 flex items-center justify-center relative z-10 group-hover/play:scale-110 group-hover/play:bg-primary group-hover/play:text-white transition-all duration-500 shadow-[0_0_50px_rgba(255,255,255,0.3)]">
-                  <span className="material-icons text-5xl ml-1 group-hover/play:rotate-[360deg] transition-transform duration-700">play_arrow</span>
+                <div className="w-16 h-16 md:w-24 md:h-24 rounded-full bg-white text-gray-950 flex items-center justify-center relative z-10 group-hover/play:scale-110 group-hover/play:bg-primary group-hover/play:text-white transition-all duration-500">
+                  <span className="material-icons text-3xl md:text-5xl ml-1">play_arrow</span>
                 </div>
               </div>
-              <h3 className="text-3xl md:text-5xl font-black text-white mb-3 tracking-tight leading-none">See Our Process</h3>
-              <p className="text-white/60 text-base font-medium max-w-sm">Experience the journey from a bold vision to a pixel-perfect digital reality.</p>
+              <h3 className="text-2xl md:text-5xl font-black text-white mb-2 md:mb-3 tracking-tight leading-none">See Our Process</h3>
+              <p className="text-white/60 text-sm md:text-base font-medium max-w-[280px] md:max-w-sm mx-auto">Experience the journey from a bold vision to a pixel-perfect digital reality.</p>
             </div>
           </div>
         </div>

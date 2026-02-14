@@ -183,16 +183,16 @@ export const Careers: React.FC = () => {
                         </div>
                     </div>
 
-                    {/* Floating badge */}
-                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-white rounded-2xl shadow-xl px-8 py-4 border border-gray-100 flex items-center gap-4 z-10">
-                        <div className="flex -space-x-3">
+                    {/* Floating badge - repositioned to bottom-right for a more intentional look */}
+                    <div className="absolute -bottom-10 md:-bottom-12 right-4 md:right-10 lg:right-20 bg-white rounded-[2rem] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.15)] px-8 py-5 border border-gray-100 flex items-center gap-5 z-20 hover:scale-105 transition-transform duration-500 cursor-pointer">
+                        <div className="flex -space-x-4">
                             {[11, 12, 13, 14, 15].map(i => (
-                                <img key={i} src={`https://i.pravatar.cc/80?img=${i}`} alt="Team" className="w-10 h-10 rounded-full border-2 border-white" />
+                                <img key={i} src={`https://i.pravatar.cc/80?img=${i}`} alt="Team" className="w-12 h-12 rounded-full border-4 border-white shadow-sm" />
                             ))}
                         </div>
                         <div>
-                            <p className="text-sm font-black text-gray-900">30+ Team Members</p>
-                            <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Across 4 Countries</p>
+                            <p className="text-base font-black text-gray-950 tracking-tight leading-none mb-1">30+ Team Members</p>
+                            <p className="text-[11px] font-bold text-primary uppercase tracking-[0.1em]">Across 4 Countries</p>
                         </div>
                     </div>
                 </div>

@@ -5,19 +5,19 @@ export const Hero: React.FC = () => {
     return (
         <section id="home" className="relative overflow-hidden bg-white">
             {/* Full-Width Video Section */}
-            <div className="relative w-full h-screen">
+            <div className="relative w-full h-[70vh] md:h-screen lg:h-[100dvh] bg-gray-950">
                 <video
                     autoPlay
                     muted
                     loop
                     playsInline
-                    poster="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600&auto=format&fit=crop"
-                    className="w-full h-full object-cover"
+                    poster="/ezgif-frame-240.jpg"
+                    className="w-full h-full object-cover opacity-90"
                 >
                     <source src="/Logo_Animation_Video_Ready.mp4" type="video/mp4" />
                 </video>
                 {/* Gradient fade at the bottom of video */}
-                <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent"></div>
+                <div className="absolute bottom-0 left-0 w-full h-24 md:h-48 bg-gradient-to-t from-white via-white/40 to-transparent"></div>
             </div>
 
             {/* Content Section Below Video */}
@@ -50,7 +50,7 @@ export const Hero: React.FC = () => {
                                 with <span className="gradient-text">precision</span>
                             </h1>
 
-                            <div className="flex flex-wrap gap-16" data-aos="fade-up" data-aos-delay="200">
+                            <div className="flex flex-wrap gap-10 md:gap-16" data-aos="fade-up" data-aos-delay="200">
                                 <div>
                                     <div className="text-4xl font-bold text-gray-900 mb-1">100+</div>
                                     <div className="text-sm text-gray-500 font-medium uppercase tracking-wider">Completed projects</div>
@@ -137,7 +137,7 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Floating Scroll Guide (on video) */}
-            <div className="absolute top-[85vh] left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-white/40">
+            <div className="absolute top-[60vh] md:top-[85vh] left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-white/40">
                 <div className="w-px h-12 bg-gradient-to-b from-white/0 to-white/40"></div>
                 <span className="text-[10px] items-center gap-2 uppercase tracking-[0.3em] font-black">Scroll</span>
             </div>
